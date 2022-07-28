@@ -210,11 +210,11 @@ export default function Home() {
 						influencers use EEZY to manage their social media content!
 					</chakra.h2>
 				</Box>
-				<Box columns={{ base: 1, xl: 2 }} spacing={"2"} mt={10}>
+				<SimpleGrid columns={{ base: 1, xl: 2 }} spacing={"2"} mt={10}>
 					{targetas?.map((cardInfo, index) => (
 						<Card {...cardInfo} index={index} />
 					))}
-				</Box>
+				</SimpleGrid>
 				<Box>
 					<Icon viewBox="0 0 40 35" mt={14} boxSize={10} color={100}>
 						<path
