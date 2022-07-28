@@ -18,7 +18,7 @@ export default function Reloj() {
 	const interval = useRef();
 
 	const startTimer = () => {
-		const countDownDate = new Date("2022-08-29").getTime();
+		const countDownDate = new Date("2022-11-11").getTime();
 		console.log(new Date("2022-08-28"));
 		interval = setInterval(() => {
 			const now = new Date().getTime();
@@ -67,9 +67,7 @@ export default function Reloj() {
 			</Heading>
 			<Box
 				display={"flex"}
-				// boxShadow={" inset 1px 1px 20px 0px black"}
-				// rounded={"3xl"}
-				w={"70%"}
+				w={"100%"}
 				h={"10rem"}
 				justifyContent={"space-around"}
 				alignItems={"center"}
@@ -86,7 +84,7 @@ export default function Reloj() {
 					borderLeftWidth={{ base: "1px", md: "1px" }}
 				>
 					<Heading
-						fontSize={"4xl"}
+						fontSize={{ base: "sm", lg: "4xl", sm: "lg" }}
 						fontWeight={500}
 						color={100}
 						fontFamily={"body"}
@@ -95,7 +93,13 @@ export default function Reloj() {
 					>
 						{timerDays}
 					</Heading>
-					<Text color={"gray.500"} fontWeight={500} width={"100%"} mb={"1rem"}>
+					<Text
+						color={"gray.500"}
+						fontWeight={500}
+						width={"100%"}
+						fontSize={{ base: "sm", lg: "lg", sm: "sm" }}
+						mb={"1rem"}
+					>
 						Dias
 					</Text>
 				</Box>
@@ -111,7 +115,7 @@ export default function Reloj() {
 					borderLeftWidth={{ base: "1px", md: "1px" }}
 				>
 					<Heading
-						fontSize={"4xl"}
+						fontSize={{ base: "sm", lg: "4xl", sm: "lg" }}
 						fontWeight={500}
 						color={100}
 						fontFamily={"body"}
@@ -120,7 +124,13 @@ export default function Reloj() {
 					>
 						{timerHours}
 					</Heading>
-					<Text color={"gray.500"} fontWeight={500} width={"100%"} mb={"1rem"}>
+					<Text
+						fontSize={{ base: "sm", lg: "lg", sm: "lg" }}
+						color={"gray.500"}
+						fontWeight={500}
+						width={"100%"}
+						mb={"1rem"}
+					>
 						Horas
 					</Text>
 				</Box>
@@ -135,7 +145,7 @@ export default function Reloj() {
 					borderLeftWidth={{ base: "1px", md: "1px" }}
 				>
 					<Heading
-						fontSize={"4xl"}
+						fontSize={{ base: "sm", lg: "4xl", sm: "lg" }}
 						fontWeight={500}
 						color={100}
 						fontFamily={"body"}
@@ -144,7 +154,13 @@ export default function Reloj() {
 					>
 						{timerMinutes}
 					</Heading>
-					<Text color={"gray.500"} fontWeight={500} width={"100%"} mb={"1rem"}>
+					<Text
+						fontSize={{ base: "sm", lg: "lg", sm: "lg" }}
+						color={"gray.500"}
+						fontWeight={500}
+						width={"100%"}
+						mb={"1rem"}
+					>
 						Minutos
 					</Text>
 				</Box>
@@ -159,7 +175,7 @@ export default function Reloj() {
 					borderLeftWidth={{ base: "1px", md: "1px" }}
 				>
 					<Heading
-						fontSize={"4xl"}
+						fontSize={{ base: "sm", lg: "4xl", sm: "lg" }}
 						fontWeight={500}
 						color={100}
 						fontFamily={"body"}
@@ -168,7 +184,13 @@ export default function Reloj() {
 					>
 						{timerSeconds}
 					</Heading>
-					<Text color={"gray.500"} fontWeight={500} width={"100%"} mb={"1rem"}>
+					<Text
+						fontSize={{ base: "sm", lg: "lg", sm: "lg" }}
+						color={"gray.500"}
+						fontWeight={500}
+						width={"100%"}
+						mb={"1rem"}
+					>
 						Segundos
 					</Text>
 				</Box>
