@@ -11,7 +11,7 @@ import {
 	Heading,
 } from "@chakra-ui/react";
 import Reloj from "./Reloj";
-import { FaWineGlassAlt } from "react-icons/fa";
+import { FaWineGlassAlt, FaRing } from "react-icons/fa";
 import { IoIosBowtie } from "react-icons/io";
 import { AiFillSound } from "react-icons/ai";
 
@@ -20,11 +20,23 @@ import Card from "./Card";
 const targetas = [
 	{
 		verBoton: true,
+		evento: "Ceremonia",
+		botonTexto: "Ubicación",
+		fecha: "11.11.2022",
+		datos: `Ceremonia: Registro civil Ciudad Evita 
+			Av Guemes entre el Leñatero y Bevilaqua 
+			Horario: 11:30 Hs `,
+		icon: FaRing,
+		imagen: `https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`,
+	},
+	{
+		verBoton: true,
 		evento: "Fiesta",
-		botonTexto: "Ver",
-		fecha: "15.05.2021",
-		datos:
-			"Listos para disfrutar de una fiesta inolvidable. Vamos a disfrutar todos juntos",
+		botonTexto: "Ubicacion",
+		fecha: "11.11.2022",
+		datos: `Veni a compartir un brindis con nosotrxs! 
+			Lugar: Casa Magno 
+			Horario: hasta lo que dé`,
 		icon: FaWineGlassAlt,
 		imagen:
 			"https://images.unsplash.com/photo-1621866908556-4f0a830707c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
@@ -33,9 +45,8 @@ const targetas = [
 		verBoton: false,
 		evento: "Codigo de Vestimenta",
 		botonTexto: "Ver",
-		fecha: "15.05.2021",
-		datos:
-			"Hombres de traje y corbata , Mujeres  Vestidos largos para la noche ",
+		fecha: "11.11.2022",
+		datos: `Vestimenta: lindos y cómodos`,
 		icon: IoIosBowtie,
 		imagen:
 			"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
@@ -154,28 +165,14 @@ export default function Home() {
 							/>
 						</Icon>
 					</Box>
-					<chakra.h1
+					<Heading
 						py={5}
 						fontSize={48}
-						fontFamily={"Work Sans"}
 						fontWeight={"bold"}
 						color={useColorModeValue("gray.700", "gray.50")}
 					>
-						You're in good company
-					</chakra.h1>
-					<chakra.h2
-						margin={"auto"}
-						width={"70%"}
-						fontFamily={"Inter"}
-						fontWeight={"medium"}
-						color={useColorModeValue("gray.500", "gray.400")}
-					>
-						See why over{" "}
-						<chakra.strong color={useColorModeValue("gray.700", "gray.50")}>
-							150,000+
-						</chakra.strong>{" "}
-						influencers use EEZY to manage their social media content!
-					</chakra.h2>
+						Vengan a compartir con nosotros
+					</Heading>
 				</Box>
 				<Box
 					display={"flex"}
