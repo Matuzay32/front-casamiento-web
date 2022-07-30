@@ -19,7 +19,7 @@ export default function Reloj() {
 
 	const startTimer = () => {
 		const countDownDate = new Date("2022-11-11").getTime();
-		console.log(new Date("2022-08-28"));
+		// console.log(new Date("2022-08-28"));
 		interval = setInterval(() => {
 			const now = new Date().getTime();
 			const distance = countDownDate - now;

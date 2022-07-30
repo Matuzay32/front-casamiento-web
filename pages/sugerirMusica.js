@@ -41,6 +41,7 @@ import { useRouter } from "next/router";
 
 export default function sugerirMusica() {
 	const router = useRouter();
+	console.log(router);
 	const { push } = router;
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
@@ -48,8 +49,9 @@ export default function sugerirMusica() {
 	const fetchPost = async (user) => {
 		setModalContent("");
 		const { current: form } = refForm;
-		const formData = new FormData(form);
+		// const formData = new FormData(form);
 
+		//este va ser el fetch que va mandar el  la sugerencia de temas
 		// fetchRegisterPagePost(user).then((x) => {
 		// 	let nombre = formData.get("nombre");
 		// 	let autor = formData.get("autor");
@@ -66,13 +68,15 @@ export default function sugerirMusica() {
 		const linkCancion = formData.get("linkCancion");
 
 		if (formData && nombre && autor && linkCancion) {
-			const user = {
+			const cancion = {
 				nombre,
 				linkCancion,
 				autor,
 			};
-			console.log(user, "probando");
+			console.log(cancion, "probando");
+
 			// fetchPost(user);
+			push("/");
 		} else {
 			setModalContent("Missing dates");
 			setTimeout(() => {
@@ -86,7 +90,7 @@ export default function sugerirMusica() {
 			position={"relative"}
 			w={"full"}
 			backgroundSize={"cover"}
-			backgroundPosition={"60% 50%"}
+			backgroundPosition={"25% 50%"}
 			backgroundImage={
 				"url(https://images.unsplash.com/photo-1535185384036-28bbc8035f28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80)"
 			}
@@ -138,13 +142,21 @@ export default function sugerirMusica() {
 						<Stack spacing={4}>
 							{/* <form ref={refForm}> */}
 
-							<FormLabel>
-								Nombre <Text color={"gray.500"}>Ingrese su nombre</Text>
+							<FormLabel
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Nombre
 							</FormLabel>
 							<Input
 								required
-								placeholder="nombre"
-								name="Nombre"
+								placeholder="Nombre"
+								name="nombre"
 								bg={"gray.100"}
 								border={0}
 								color={"gray.500"}
@@ -152,7 +164,17 @@ export default function sugerirMusica() {
 									color: "gray.500",
 								}}
 							/>
-							<FormLabel>Nombre de cancion y author</FormLabel>
+							<FormLabel
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Nombre de cancion y author
+							</FormLabel>
 							<Input
 								required
 								type={"text"}
@@ -166,12 +188,22 @@ export default function sugerirMusica() {
 								}}
 							/>
 
-							<FormLabel>Link de la cancion </FormLabel>
+							<FormLabel
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Link de la cancion{" "}
+							</FormLabel>
 							<Input
 								required
 								name="linkCancion"
 								type={"text"}
-								placeholder="Ingrese el link de la cancion puede ser Spotify o Yotube"
+								placeholder="Ingrese el link de la cancion puede ser Spotify "
 								bg={"gray.100"}
 								border={0}
 								color={"gray.500"}

@@ -16,8 +16,17 @@ import {
 } from "@chakra-ui/react";
 
 export default function Card(props) {
-	const { evento, fecha, imagen, index, botonTexto, icon, datos, verBoton } =
-		props;
+	const {
+		evento,
+		fecha,
+		imagen,
+		index,
+		botonTexto,
+		icon,
+		datos,
+		verBoton,
+		href,
+	} = props;
 
 	return (
 		<Center py={20} width={{ base: "full", sm: "full", lg: "30%" }}>
@@ -65,6 +74,8 @@ export default function Card(props) {
 
 					{verBoton && (
 						<Button
+							as={"a"}
+							href={href}
 							w={"full"}
 							mt={8}
 							bg={useColorModeValue("#151f21", "gray.900")}
