@@ -28,7 +28,6 @@ import {
 	ModalOverlay,
 } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
-
 import { FiCamera, FiSave } from "react-icons/fi";
 import { FaCarSide } from "react-icons/fa";
 import {
