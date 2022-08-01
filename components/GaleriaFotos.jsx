@@ -59,18 +59,23 @@ export default function GaleriaFotos() {
 	return (
 		<Flex
 			w="full"
-			bg="#edf3f8"
+			bg="#424242"
 			_dark={{
-				bg: "#3e3e3e",
+				bg: "#424242",
 			}}
-			p={10}
 			alignItems="center"
 			justifyContent="center"
 		>
-			<Flex w="full" overflow="visible" pos="relative">
+			<Flex w="full" overflow="hidden" pos="relative">
 				<Flex h="400px" w="full" {...carouselStyle}>
 					{slides.map((slide, sid) => (
-						<Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
+						<Box
+							p={"30px"}
+							key={`slide-${sid}`}
+							boxSize="full"
+							shadow="md"
+							flex="none"
+						>
 							<Text
 								color="white"
 								fontSize="xs"

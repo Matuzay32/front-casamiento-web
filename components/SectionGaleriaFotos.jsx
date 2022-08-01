@@ -37,8 +37,7 @@ export default function SectionGaleriaFotos() {
 				<Icon w={"70px"} h={"70px"} as={FaCameraRetro}></Icon>
 			</Box>
 
-			<Box h={"120px"} w={"full"} bg={"gray.300"}>
-				{" "}
+			<Box h={"auto"} w={"full"} bg={100} p={20}>
 				<GaleriaFotos></GaleriaFotos>
 			</Box>
 		</Flex>
