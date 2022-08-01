@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Box, Heading, Icon, useColorModeValue } from "@chakra-ui/react";
 import { FaCameraRetro } from "react-icons/fa";
+import GaleriaFotos from "./GaleriaFotos";
 
 export default function SectionGaleriaFotos() {
 	return (
@@ -34,6 +35,11 @@ export default function SectionGaleriaFotos() {
 			></Box>
 			<Box>
 				<Icon w={"70px"} h={"70px"} as={FaCameraRetro}></Icon>
+			</Box>
+
+			<Box h={"120px"} w={"full"} bg={"gray.300"}>
+				{" "}
+				<GaleriaFotos></GaleriaFotos>
 			</Box>
 		</Flex>
 	);
