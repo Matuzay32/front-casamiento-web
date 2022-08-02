@@ -61,13 +61,15 @@ export default function SectionGaleriaFotos() {
 				h={"auto"}
 				w={{ base: "full", sm: "full", lg: "full" }}
 				display={"flex"}
-				justifyContent={"center"}
+				justifyContent={"space-around"}
 			>
 				<Box
 					w={{ base: "full", sm: "full", lg: "400px" }}
 					bg={"gray.300"}
 					mt={"10"}
 					mb={"10"}
+					ml={"20px"}
+					mr={"20px"}
 				>
 					<GaleriaFotos></GaleriaFotos>
 				</Box>
