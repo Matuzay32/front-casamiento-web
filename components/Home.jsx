@@ -8,13 +8,13 @@ import {
 	Icon,
 	SimpleGrid,
 	useColorModeValue,
+	Image,
 	Heading,
 } from "@chakra-ui/react";
 import Reloj from "./Reloj";
 import { FaWineGlassAlt, FaRing } from "react-icons/fa";
 import { IoIosBowtie } from "react-icons/io";
 import { AiFillSound } from "react-icons/ai";
-
 import Card from "./Card";
 import SectionGaleriaFotos from "./SectionGaleriaFotos";
 

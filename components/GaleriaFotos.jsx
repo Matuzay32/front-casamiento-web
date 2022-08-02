@@ -22,19 +22,16 @@ export default function GaleriaFotos() {
 	};
 	const slides = [
 		{
-			img: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+			img: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 		},
 		{
-			img: "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+			img: "https://images.unsplash.com/photo-1517456215183-9a2c3a748d0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
 		},
 		{
-			img: "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+			img: "https://images.unsplash.com/photo-1562249004-1f7289c19c49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
 		},
 		{
-			img: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-		},
-		{
-			img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+			img: "https://images.unsplash.com/photo-1525328302834-764f32276842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
 		},
 	];
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -59,9 +56,9 @@ export default function GaleriaFotos() {
 	return (
 		<Flex
 			w="full"
-			bg="#424242"
+			// bg="#424242"
 			_dark={{
-				bg: "#424242",
+				Rg: "#424242",
 			}}
 			alignItems="center"
 			justifyContent="center"
@@ -79,6 +76,7 @@ export default function GaleriaFotos() {
 							<Text
 								color="white"
 								fontSize="xs"
+								fontWeight={500}
 								p="8px 12px"
 								pos="absolute"
 								top="0"
@@ -89,7 +87,8 @@ export default function GaleriaFotos() {
 								src={slide.img}
 								alt="carousel image"
 								boxSize="full"
-								backgroundSize="cover"
+								objectFit="cover"
+								boxShadow={"2xl"}
 							/>
 						</Box>
 					))}
