@@ -53,8 +53,9 @@ export default function SectionGaleriaFotos() {
 
 			<PillPity
 				pos={"relative"}
-				pattern={"architect"}
+				pattern={"glamorous"}
 				patternFill={patterFill}
+				patOpacity={0.1}
 				bgColor="#141517"
 				as={Box}
 				overflow="hidden"
@@ -65,7 +66,8 @@ export default function SectionGaleriaFotos() {
 			>
 				<Box
 					w={{ base: "full", sm: "full", lg: "400px" }}
-					bg={"gray.300"}
+					bg={"gray.200"}
+					boxShadow={"Inner"}
 					mt={"10"}
 					mb={"10"}
 					ml={"20px"}

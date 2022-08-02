@@ -17,6 +17,7 @@ import { IoIosBowtie } from "react-icons/io";
 import { AiFillSound } from "react-icons/ai";
 import Card from "./Card";
 import SectionGaleriaFotos from "./SectionGaleriaFotos";
+import PillPity from "pill-pity";
 
 const targetas = [
 	{
@@ -70,6 +71,8 @@ const targetas = [
 ];
 
 export default function Home() {
+	const patterFill = useColorModeValue("100", "brand.300");
+
 	return (
 		<>
 			<Box
@@ -151,6 +154,7 @@ export default function Home() {
 				</Box>
 			</Box>
 			<Flex
+				pos={"relative"}
 				textAlign={"center"}
 				pt={10}
 				justifyContent={"center"}

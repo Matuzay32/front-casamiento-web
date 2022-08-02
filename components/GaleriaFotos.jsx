@@ -63,7 +63,7 @@ export default function GaleriaFotos() {
 			alignItems="center"
 			justifyContent="center"
 		>
-			<Flex w="full" overflow="hidden" pos="relative">
+			<Flex w="full" overflow="visible" pos="relative">
 				<Flex h="auto" w="full" {...carouselStyle}>
 					{slides.map((slide, sid) => (
 						<Box
@@ -89,10 +89,12 @@ export default function GaleriaFotos() {
 							</Text>
 							<Image
 								src={slide.img}
+								boxShadow={"dark-lg"}
 								alt="carousel image"
 								boxSize="full"
 								objectFit="cover"
-								boxShadow={"2xl"}
+								cursor={"pointer"}
+								onClick={() => setSlide(sid)}
 							/>
 						</Box>
 					))}
