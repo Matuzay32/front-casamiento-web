@@ -64,7 +64,7 @@ export default function GaleriaFotos() {
 			justifyContent="center"
 		>
 			<Flex w="full" overflow="hidden" pos="relative">
-				<Flex h="500px" w="full" {...carouselStyle}>
+				<Flex h="auto" w="full" {...carouselStyle}>
 					{slides.map((slide, sid) => (
 						<Box
 							p={"30px"}
