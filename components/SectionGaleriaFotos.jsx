@@ -11,8 +11,11 @@ import {
 } from "@chakra-ui/react";
 import { FaCameraRetro } from "react-icons/fa";
 import GaleriaFotos from "./GaleriaFotos";
+import PillPity from "pill-pity";
 
 export default function SectionGaleriaFotos() {
+	const patterFill = useColorModeValue("100", "brand.300");
+
 	return (
 		<Flex
 			textAlign={"center"}
@@ -48,15 +51,27 @@ export default function SectionGaleriaFotos() {
 				<Icon w={"70px"} h={"70px"} as={FaCameraRetro}></Icon>
 			</Box>
 
-			<Box
+			<PillPity
 				pos={"relative"}
+				pattern={"architect"}
+				patternFill={patterFill}
+				bgColor="#141517"
+				as={Box}
 				overflow="hidden"
-				h={"500px"}
-				w={{ base: "full", sm: "wrap", lg: "500px" }}
-				bg={"#141517"}
+				h={"auto"}
+				w={{ base: "full", sm: "full", lg: "full" }}
+				display={"flex"}
+				justifyContent={"center"}
 			>
-				<GaleriaFotos></GaleriaFotos>
-			</Box>
+				<Box
+					w={{ base: "full", sm: "full", lg: "400px" }}
+					bg={"gray.300"}
+					mt={"10"}
+					mb={"10"}
+				>
+					<GaleriaFotos></GaleriaFotos>
+				</Box>
+			</PillPity>
 			<Box display={"flex"} flexFlow={"column"} alignItems={"center"}>
 				<Icon as={"div"} viewBox="0 0 40 35" mt={14} boxSize={10} color={100}>
 					<path
