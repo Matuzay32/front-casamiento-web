@@ -64,7 +64,7 @@ export default function GaleriaFotos() {
 			justifyContent="center"
 		>
 			<Flex w="full" overflow="hidden" pos="relative">
-				<Flex h="400px" w="full" {...carouselStyle}>
+				<Flex h="500px" w="full" {...carouselStyle}>
 					{slides.map((slide, sid) => (
 						<Box
 							p={"30px"}
@@ -74,12 +74,16 @@ export default function GaleriaFotos() {
 							flex="none"
 						>
 							<Text
+								backgroundColor={"blackAlpha.800"}
+								boxShadow={"dark-lg"}
+								borderRadius="30px"
+								mb={"10px"}
 								color="white"
 								fontSize="xs"
-								fontWeight={500}
+								fontWeight={900}
 								p="8px 12px"
 								pos="absolute"
-								top="0"
+								top="3"
 							>
 								{sid + 1} / {slidesCount}
 							</Text>
