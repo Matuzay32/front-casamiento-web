@@ -45,7 +45,7 @@ export default function sugerirMusica() {
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
 
-	const fetchPost = async (user) => {
+	const fetchPost = async (cancion) => {
 		setModalContent("");
 		const { current: form } = refForm;
 		// const formData = new FormData(form);
@@ -74,7 +74,7 @@ export default function sugerirMusica() {
 			};
 			console.log(cancion, "probando");
 
-			// fetchPost(user);
+			// fetchPost(cancion);
 			push("/");
 		} else {
 			setModalContent("Missing dates");

@@ -45,16 +45,15 @@ export default function sugerirMusica() {
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
 
-	const fetchPost = async (user) => {
+	const fetchPost = async (persona) => {
 		setModalContent("");
 		const { current: form } = refForm;
 		// const formData = new FormData(form);
 
-		//este va ser el fetch que va mandar el  la sugerencia de temas
+		// este va ser el fetch que va mandar el  la confirmacion de asistencia
 		// fetchRegisterPagePost(user).then((x) => {
 		// 	let nombre = formData.get("nombre");
-		// 	let autor = formData.get("autor");
-		// 	let linkCancion = formData.get("linkCancion");
+		// 	let apellido = formData.get("apellido");
 		// });
 	};
 
@@ -63,18 +62,16 @@ export default function sugerirMusica() {
 		// event.preventDefault()
 		const formData = new FormData(form);
 		const nombre = formData.get("nombre");
-		const autor = formData.get("autor");
-		const linkCancion = formData.get("linkCancion");
+		const apellido = formData.get("apellido");
 
-		if (formData && nombre && autor && linkCancion) {
-			const cancion = {
+		if (formData && nombre && apellido) {
+			const persona = {
 				nombre,
-				linkCancion,
 				autor,
 			};
-			console.log(cancion, "probando");
+			console.log(persona, "probando");
 
-			// fetchPost(user);
+			// fetchPost(persona);
 			push("/");
 		} else {
 			setModalContent("Missing dates");
@@ -129,12 +126,11 @@ export default function sugerirMusica() {
 							lineHeight={1.1}
 							// fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
 						>
-							Música
+							Confirmar Asistencia
 						</Heading>
 						<Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-							Sugerinos que musica te gustaria, puede ser con el link de spotify
-							o bien con el nombre del tema que te gusta. Armemos la play list
-							juntos
+							Te pedimos que por favor confirmes la asistencia, esto nos va a
+							ayudar a organizar mejor tanto la fiesta como la ceremonia
 						</Text>
 					</Stack>
 					<Box as={"form"} mt={10} ref={refForm}>
@@ -172,13 +168,13 @@ export default function sugerirMusica() {
 								mb={"1rem"}
 								lineHeight={1.1}
 							>
-								Nombre de cancion y author
+								Apellido
 							</FormLabel>
 							<Input
 								required
 								type={"text"}
-								placeholder="Cancion y autor"
-								name="autor"
+								placeholder="Apellido"
+								name="Apellido"
 								bg={"gray.100"}
 								border={0}
 								color={"gray.500"}
@@ -186,32 +182,6 @@ export default function sugerirMusica() {
 									color: "gray.500",
 								}}
 							/>
-
-							<FormLabel
-								fontSize={"md"}
-								fontWeight={500}
-								color={100}
-								fontFamily={"body"}
-								width={"100%"}
-								mb={"1rem"}
-								lineHeight={1.1}
-							>
-								Link de la cancion{" "}
-							</FormLabel>
-							<Input
-								required
-								name="linkCancion"
-								type={"text"}
-								placeholder="Ingrese el link de la cancion puede ser Spotify "
-								bg={"gray.100"}
-								border={0}
-								color={"gray.500"}
-								_placeholder={{
-									color: "gray.500",
-								}}
-							/>
-
-							{/* </form> */}
 
 							<Button
 								onClick={(e) => handleSumbit(e)}
