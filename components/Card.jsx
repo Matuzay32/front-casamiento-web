@@ -30,7 +30,6 @@ export default function Card(props) {
 		href,
 		id,
 	} = props;
-	console.log(id);
 	return (
 		<Center
 			id={id}
