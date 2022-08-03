@@ -21,6 +21,18 @@ import PillPity from "pill-pity";
 
 const targetas = [
 	{
+		href: "/confirmarAsistencia",
+		verBoton: true,
+		evento: "Confirmar asistencia",
+		botonTexto: "Confirmar",
+		fecha: "15.05.2021",
+		datos: "¿Vas a venir? por favor confirma asistencia",
+		icon: AiFillSound,
+		imagen:
+			"https://images.unsplash.com/photo-1531346618680-ab17d6dcd07c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+	},
+
+	{
 		href: "",
 		verBoton: true,
 		evento: "Ceremonia",
