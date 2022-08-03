@@ -14,7 +14,7 @@ import GaleriaFotos from "./GaleriaFotos";
 import PillPity from "pill-pity";
 
 export default function SectionGaleriaFotos() {
-	const patterFill = useColorModeValue("100", "brand.300");
+	const patterFill = useColorModeValue("white", "brand.300");
 
 	return (
 		<Flex
@@ -55,8 +55,8 @@ export default function SectionGaleriaFotos() {
 				pos={"relative"}
 				pattern={"glamorous"}
 				patternFill={patterFill}
-				patOpacity={0.1}
-				bgColor="#141517"
+				patOpacity={0.5}
+				bgColor="#d5b063"
 				as={Box}
 				overflow="hidden"
 				h={"auto"}
