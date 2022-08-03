@@ -12,14 +12,19 @@ import {
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
 import index from "../pages/index";
+import PillPity from "pill-pity";
 
 export default function Footer({ targetas: footerLinks }) {
+	const patterFill = useColorModeValue("gray.200", "gray.900");
+
 	return (
-		<Box
-			borderRadius={"full"}
+		<PillPity
+			pattern={"hideout"}
+			patternFill={patterFill}
+			patOpacity={0.5}
+			bgColor="white"
+			as={Box}
 			borderTopWidth={"3px"}
-			bg={useColorModeValue("white", "gray.900")}
-			color={useColorModeValue("gray.700", "gray.200")}
 		>
 			<Container
 				as={Stack}
@@ -40,7 +45,7 @@ export default function Footer({ targetas: footerLinks }) {
 						return (
 							<Link
 								key={`${evento}${index}`}
-								fontSize={"3xl"}
+								fontSize={"2xl"}
 								fontWeight={500}
 								color={100}
 								fontFamily={"body"}
@@ -50,6 +55,12 @@ export default function Footer({ targetas: footerLinks }) {
 								href={href}
 								_hover={{
 									textDecoration: "none",
+									fontSize: "3xl",
+									fontWeight: 500,
+									color: "100",
+									fontFamily: "body",
+									mb: "1rem",
+									transition: "all .8s",
 								}}
 							>
 								{evento}
@@ -58,6 +69,6 @@ export default function Footer({ targetas: footerLinks }) {
 					})}
 				</Stack>
 			</Container>
-		</Box>
+		</PillPity>
 	);
 }
