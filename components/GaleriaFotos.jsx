@@ -50,7 +50,7 @@ export default function GaleriaFotos() {
 	};
 
 	const carouselStyle = {
-		transition: "all .5s",
+		transition: "all 1.5s",
 		ml: `-${currentSlide * 100}%`,
 	};
 	return (

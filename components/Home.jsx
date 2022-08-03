@@ -11,6 +11,7 @@ import {
 	Image,
 	Heading,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import Footer from "./Footer";
 import Reloj from "./Reloj";
 import { FaWineGlassAlt, FaRing } from "react-icons/fa";
@@ -21,69 +22,68 @@ import Card from "./Card";
 import SectionGaleriaFotos from "./SectionGaleriaFotos";
 import PillPity from "pill-pity";
 
-const targetas = [
-	{
-		href: "/confirmarAsistencia",
-		verBoton: true,
-		evento: "Confirmar asistencia",
-		botonTexto: "Confirmar",
-		fecha: "11.11.2022",
-		datos: "¿Vas a venir? por favor confirma asistencia",
-		icon: TbConfetti,
-		imagen:
-			"https://images.unsplash.com/photo-1531346618680-ab17d6dcd07c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-	},
-	{
-		href: "",
-		verBoton: true,
-		evento: "Ceremonia",
-		botonTexto: "Ubicación",
-		fecha: "11.11.2022",
-		datos: `Ceremonia: Registro civil Ciudad Evita 
-			Av Guemes entre el Leñatero y Bevilaqua 
-			Horario: 11:30 Hs `,
-		icon: FaRing,
-		imagen: `https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`,
-	},
-	{
-		href: "",
-		verBoton: true,
-		evento: "Fiesta",
-		botonTexto: "Ubicacion",
-		fecha: "11.11.2022",
-		datos: `Veni a compartir un brindis con nosotrxs! 
-			Lugar: Casa Magno 
-			Horario: hasta lo que dé`,
-		icon: FaWineGlassAlt,
-		imagen:
-			"https://images.unsplash.com/photo-1621866908556-4f0a830707c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-	},
-	{
-		href: "#targeta3",
-		verBoton: false,
-		evento: "Codigo de Vestimenta",
-		botonTexto: "Ver",
-		fecha: "11.11.2022",
-		datos: `Vestimenta: lindos y cómodos`,
-		icon: IoIosBowtie,
-		imagen:
-			"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-	},
-	{
-		href: "/sugerirMusica",
-		verBoton: true,
-		evento: "Sugerir música",
-		botonTexto: "sugerir música",
-		fecha: "11.11.2022",
-		datos:
-			"¿Qué música no puede faltar?. Siéntase libre de sugerir una lista de reproducción ",
-		icon: AiFillSound,
-		imagen:
-			"https://images.unsplash.com/photo-1526142684086-7ebd69df27a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-	},
-];
-
 export default function Home() {
+	const [targetas, setTargetas] = useState([
+		{
+			href: "/confirmarAsistencia",
+			verBoton: true,
+			evento: "Confirmar asistencia",
+			botonTexto: "Confirmar",
+			fecha: "11.11.2022",
+			datos: "¿Vas a venir? por favor confirma asistencia",
+			icon: TbConfetti,
+			imagen:
+				"https://images.unsplash.com/photo-1531346618680-ab17d6dcd07c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+		},
+		{
+			href: "",
+			verBoton: true,
+			evento: "Ceremonia",
+			botonTexto: "Ubicación",
+			fecha: "11.11.2022",
+			datos: `Ceremonia: Registro civil Ciudad Evita 
+				Av Guemes entre el Leñatero y Bevilaqua 
+				Horario: 11:30 Hs `,
+			icon: FaRing,
+			imagen: `https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`,
+		},
+		{
+			href: "",
+			verBoton: true,
+			evento: "Fiesta",
+			botonTexto: "Ubicacion",
+			fecha: "11.11.2022",
+			datos: `Veni a compartir un brindis con nosotrxs! 
+				Lugar: Casa Magno 
+				Horario: hasta lo que dé`,
+			icon: FaWineGlassAlt,
+			imagen:
+				"https://images.unsplash.com/photo-1621866908556-4f0a830707c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+		},
+		{
+			href: "#targeta3",
+			verBoton: false,
+			evento: "Codigo de Vestimenta",
+			botonTexto: "Ver",
+			fecha: "11.11.2022",
+			datos: `Vestimenta: lindos y cómodos`,
+			icon: IoIosBowtie,
+			imagen:
+				"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+		},
+		{
+			href: "/sugerirMusica",
+			verBoton: true,
+			evento: "Sugerir música",
+			botonTexto: "sugerir música",
+			fecha: "11.11.2022",
+			datos:
+				"¿Qué música no puede faltar?. Siéntase libre de sugerir una lista de reproducción ",
+			icon: AiFillSound,
+			imagen:
+				"https://images.unsplash.com/photo-1526142684086-7ebd69df27a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+		},
+	]);
 	const patterFill = useColorModeValue("100", "brand.300");
 
 	return (
