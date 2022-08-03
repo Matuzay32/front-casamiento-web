@@ -10,6 +10,8 @@ import {
 	Flex,
 	Text,
 	Stack,
+	HStack,
+	VStack,
 	Button,
 	useColorModeValue,
 	useBreakpointValue,
@@ -41,7 +43,7 @@ export default function Card(props) {
 				<Image h={"120px"} w={"full"} src={imagen} objectFit={"cover"} />
 
 				<Box p={6}>
-					<Stack spacing={0} align={"center"} mb={5}>
+					<VStack spacing={0} align={"center"} mb={5}>
 						<Heading
 							fontSize={"4xl"}
 							fontWeight={500}
@@ -54,8 +56,8 @@ export default function Card(props) {
 							{evento}
 						</Heading>
 						<Text color={"gray.500"}>{datos}</Text>
-					</Stack>
-					<Stack spacing={0} align={"center"} mb={5}></Stack>
+					</VStack>
+					<VStack spacing={0} align={"center"} mb={5}></VStack>
 
 					<Stack direction={"row"} justify={"center"} spacing={6}>
 						<Stack
@@ -66,7 +68,7 @@ export default function Card(props) {
 							spacing={0}
 							borderRadius={"50px"}
 							border={"2px solid black"}
-							align={"center"}
+							alignItems={"center"}
 						>
 							<Icon fontSize={"40px"} as={icon} />
 						</Stack>
