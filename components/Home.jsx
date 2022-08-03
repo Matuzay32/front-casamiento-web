@@ -15,6 +15,7 @@ import Reloj from "./Reloj";
 import { FaWineGlassAlt, FaRing } from "react-icons/fa";
 import { IoIosBowtie } from "react-icons/io";
 import { AiFillSound } from "react-icons/ai";
+import { TbConfetti } from "react-icons/tb";
 import Card from "./Card";
 import SectionGaleriaFotos from "./SectionGaleriaFotos";
 import PillPity from "pill-pity";
@@ -25,9 +26,9 @@ const targetas = [
 		verBoton: true,
 		evento: "Confirmar asistencia",
 		botonTexto: "Confirmar",
-		fecha: "15.05.2021",
+		fecha: "11.11.2022",
 		datos: "¿Vas a venir? por favor confirma asistencia",
-		icon: AiFillSound,
+		icon: TbConfetti,
 		imagen:
 			"https://images.unsplash.com/photo-1531346618680-ab17d6dcd07c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
 	},
@@ -73,7 +74,7 @@ const targetas = [
 		verBoton: true,
 		evento: "Música",
 		botonTexto: "sugerir música",
-		fecha: "15.05.2021",
+		fecha: "11.11.2022",
 		datos:
 			"¿Qué música no puede faltar?. Siéntase libre de sugerir una lista de reproducción ",
 		icon: AiFillSound,

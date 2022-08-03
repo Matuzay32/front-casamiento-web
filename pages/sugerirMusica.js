@@ -40,7 +40,7 @@ import { useRouter } from "next/router";
 
 export default function sugerirMusica() {
 	const router = useRouter();
-	console.log(router);
+	// console.log(router);
 	const { push } = router;
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();

@@ -40,7 +40,7 @@ import { useRouter } from "next/router";
 
 export default function sugerirMusica() {
 	const router = useRouter();
-	console.log(router);
+	// console.log(router);
 	const { push } = router;
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
@@ -67,7 +67,7 @@ export default function sugerirMusica() {
 		if (formData && nombre && apellido) {
 			const persona = {
 				nombre,
-				autor,
+				apellido,
 			};
 			console.log(persona, "probando");
 
@@ -88,7 +88,7 @@ export default function sugerirMusica() {
 			backgroundSize={"cover"}
 			backgroundPosition={"25% 50%"}
 			backgroundImage={
-				"url(https://images.unsplash.com/photo-1535185384036-28bbc8035f28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80)"
+				"url(https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)"
 			}
 		>
 			<Container
@@ -174,7 +174,7 @@ export default function sugerirMusica() {
 								required
 								type={"text"}
 								placeholder="Apellido"
-								name="Apellido"
+								name="apellido"
 								bg={"gray.100"}
 								border={0}
 								color={"gray.500"}
