@@ -59,7 +59,7 @@ const targetas = [
 			"https://images.unsplash.com/photo-1621866908556-4f0a830707c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
 	},
 	{
-		href: "",
+		href: "#targeta3",
 		verBoton: false,
 		evento: "Codigo de Vestimenta",
 		botonTexto: "Ver",
@@ -211,9 +211,16 @@ export default function Home() {
 					spacing={"2"}
 					mt={10}
 				>
-					{targetas?.map((cardInfo, index) => (
-						<Card key={`${index}`} {...cardInfo} index={index} />
-					))}
+					{targetas?.map((cardInfo, index) => {
+						return (
+							<Card
+								id={`targeta${index}`}
+								key={`${index}`}
+								{...cardInfo}
+								index={index}
+							/>
+						);
+					})}
 				</Box>
 				<Box mb={"5rem"}>
 					<SectionGaleriaFotos />

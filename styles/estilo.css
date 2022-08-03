@@ -1,10 +1,12 @@
+html {
+	scroll-behavior: smooth;
+  }
 .corazon {
 	animation: corazonAnim 10s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 .mariaLucho {
 	animation: mariaLuchoAnim 5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
 /* Animaciones */
 @keyframes corazonAnim {
 	10% {

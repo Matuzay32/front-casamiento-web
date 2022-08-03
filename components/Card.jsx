@@ -28,10 +28,16 @@ export default function Card(props) {
 		datos,
 		verBoton,
 		href,
+		id,
 	} = props;
-
+	console.log(id);
 	return (
-		<Center py={20} width={{ base: "full", sm: "full", lg: "30%" }}>
+		<Center
+			id={id}
+			as="div"
+			py={20}
+			width={{ base: "full", sm: "full", lg: "30%" }}
+		>
 			<Box
 				maxW={"270px"}
 				w={"full"}

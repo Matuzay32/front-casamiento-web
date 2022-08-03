@@ -14,9 +14,9 @@ import { ReactNode } from "react";
 import index from "../pages/index";
 
 export default function Footer({ targetas: footerLinks }) {
-	console.log(footerLinks);
 	return (
 		<Box
+			borderRadius={"full"}
 			borderTopWidth={"3px"}
 			bg={useColorModeValue("white", "gray.900")}
 			color={useColorModeValue("gray.700", "gray.200")}
