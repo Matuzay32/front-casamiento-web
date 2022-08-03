@@ -11,6 +11,7 @@ import {
 	Image,
 	Heading,
 } from "@chakra-ui/react";
+import Footer from "./Footer";
 import Reloj from "./Reloj";
 import { FaWineGlassAlt, FaRing } from "react-icons/fa";
 import { IoIosBowtie } from "react-icons/io";
@@ -32,7 +33,6 @@ const targetas = [
 		imagen:
 			"https://images.unsplash.com/photo-1531346618680-ab17d6dcd07c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
 	},
-
 	{
 		href: "",
 		verBoton: true,
@@ -72,7 +72,7 @@ const targetas = [
 	{
 		href: "/sugerirMusica",
 		verBoton: true,
-		evento: "Música",
+		evento: "Sugerir música",
 		botonTexto: "sugerir música",
 		fecha: "11.11.2022",
 		datos:
@@ -215,9 +215,10 @@ export default function Home() {
 						<Card key={`${index}`} {...cardInfo} index={index} />
 					))}
 				</Box>
-				<Box>
+				<Box mb={"5rem"}>
 					<SectionGaleriaFotos />
 				</Box>
+				<Footer targetas={targetas}></Footer>
 			</Flex>
 		</>
 	);
