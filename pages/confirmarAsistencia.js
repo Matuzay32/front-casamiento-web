@@ -37,12 +37,15 @@ import {
 	FaShoppingCart,
 } from "react-icons/fa";
 import { useRouter } from "next/router";
+import { PillPity } from "pill-pity";
 
-export default function sugerirMusica() {
+export default function confirmarAsistencia() {
 	const router = useRouter();
 	// console.log(router);
 	const { push } = router;
 	const [modalContent, setModalContent] = useState("");
+	const patterFill = useColorModeValue("white", "brand.300");
+
 	const refForm = useRef();
 
 	const fetchPost = async (persona) => {
@@ -84,14 +87,19 @@ export default function sugerirMusica() {
 	};
 
 	return (
-		<Box
+		<PillPity
 			position={"relative"}
 			w={"full"}
-			backgroundSize={"cover"}
-			backgroundPosition={"25% 50%"}
-			backgroundImage={
-				"url(https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)"
-			}
+			// backgroundSize={"cover"}
+			// backgroundPosition={"25% 50%"}
+			// backgroundImage={
+			// 	"url(https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)"
+			// }
+			pattern={"architect"}
+			patternFill={patterFill}
+			patOpacity={0.5}
+			bgColor={300}
+			as={Box}
 		>
 			<Container
 				as={SimpleGrid}
@@ -227,6 +235,6 @@ export default function sugerirMusica() {
 					</Box>
 				</Stack>
 			</Container>
-		</Box>
+		</PillPity>
 	);
 }

@@ -3,6 +3,7 @@ const theme = extendTheme({
 	colors: {
 		100: "#deb887",
 		200: "#B2936C",
+		300: "#B2936C",
 	},
 });
 
