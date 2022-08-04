@@ -91,6 +91,7 @@ export default function sugerirMusica() {
 		<PillPity
 			position={"relative"}
 			w={"full"}
+			h={"100vh"}
 			// backgroundSize={"cover"}
 			// backgroundPosition={"25% 50%"}
 			// backgroundImage={
