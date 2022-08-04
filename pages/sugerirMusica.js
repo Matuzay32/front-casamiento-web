@@ -37,8 +37,11 @@ import {
 	FaShoppingCart,
 } from "react-icons/fa";
 import { useRouter } from "next/router";
+import { PillPity } from "pill-pity";
 
 export default function sugerirMusica() {
+	const patterFill = useColorModeValue("white", "brand.300");
+
 	const router = useRouter();
 	// console.log(router);
 	const { push } = router;
@@ -85,14 +88,19 @@ export default function sugerirMusica() {
 	};
 
 	return (
-		<Box
+		<PillPity
 			position={"relative"}
 			w={"full"}
-			backgroundSize={"cover"}
-			backgroundPosition={"25% 50%"}
-			backgroundImage={
-				"url(https://images.unsplash.com/photo-1535185384036-28bbc8035f28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80)"
-			}
+			// backgroundSize={"cover"}
+			// backgroundPosition={"25% 50%"}
+			// backgroundImage={
+			// 	"url(https://images.unsplash.com/photo-1535185384036-28bbc8035f28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80)"
+			// }
+			pattern={"architect"}
+			patternFill={patterFill}
+			patOpacity={0.5}
+			bgColor={300}
+			as={Box}
 		>
 			<Container
 				as={SimpleGrid}
@@ -132,60 +140,13 @@ export default function sugerirMusica() {
 							Música
 						</Heading>
 						<Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-							Sugerinos que musica te gustaria, puede ser con el link de spotify
-							o bien con el nombre del tema que te gusta. Armemos la play list
-							juntos
+							Sugerinos que musica te gustaria, puede ser con el link de
+							spotify. Armemos la play list juntos
 						</Text>
 					</Stack>
 					<Box as={"form"} mt={10} ref={refForm}>
 						<Stack spacing={4}>
 							{/* <form ref={refForm}> */}
-
-							<FormLabel
-								fontSize={"md"}
-								fontWeight={500}
-								color={100}
-								fontFamily={"body"}
-								width={"100%"}
-								mb={"1rem"}
-								lineHeight={1.1}
-							>
-								Nombre
-							</FormLabel>
-							<Input
-								required
-								placeholder="Nombre"
-								name="nombre"
-								bg={"gray.100"}
-								border={0}
-								color={"gray.500"}
-								_placeholder={{
-									color: "gray.500",
-								}}
-							/>
-							<FormLabel
-								fontSize={"md"}
-								fontWeight={500}
-								color={100}
-								fontFamily={"body"}
-								width={"100%"}
-								mb={"1rem"}
-								lineHeight={1.1}
-							>
-								Nombre de cancion y author
-							</FormLabel>
-							<Input
-								required
-								type={"text"}
-								placeholder="Cancion y autor"
-								name="autor"
-								bg={"gray.100"}
-								border={0}
-								color={"gray.500"}
-								_placeholder={{
-									color: "gray.500",
-								}}
-							/>
 
 							<FormLabel
 								fontSize={"md"}
@@ -232,6 +193,6 @@ export default function sugerirMusica() {
 					</Box>
 				</Stack>
 			</Container>
-		</Box>
+		</PillPity>
 	);
 }
