@@ -9,6 +9,7 @@ import {
 	Icon,
 	Stack,
 } from "@chakra-ui/react";
+import PanelUsersBackOffice from "./PanelUsersBackOffice";
 
 export default function Reloj() {
 	const [timerDays, setTimerDays] = useState("00");
@@ -55,6 +56,7 @@ export default function Reloj() {
 			alignItems={"center"}
 			flexFlow={"column"}
 		>
+			<PanelUsersBackOffice />
 			<Heading
 				fontSize={"50px"}
 				fontWeight={500}
