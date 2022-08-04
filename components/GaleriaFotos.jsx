@@ -22,16 +22,22 @@ export default function GaleriaFotos() {
 	};
 	const slides = [
 		{
-			img: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+			img: "images/1.jpeg",
 		},
 		{
-			img: "https://images.unsplash.com/photo-1517456215183-9a2c3a748d0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+			img: "images/2.jpeg",
 		},
 		{
-			img: "https://images.unsplash.com/photo-1562249004-1f7289c19c49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+			img: "images/3.jpeg",
 		},
 		{
-			img: "https://images.unsplash.com/photo-1525328302834-764f32276842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+			img: "images/4.jpeg",
+		},
+		{
+			img: "images/5.jpeg",
+		},
+		{
+			img: "images/6.jpeg",
 		},
 	];
 	const [currentSlide, setCurrentSlide] = useState(0);
