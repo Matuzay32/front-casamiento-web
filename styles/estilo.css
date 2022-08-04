@@ -1,6 +1,6 @@
 html {
 	scroll-behavior: smooth;
-  }
+}
 .corazon {
 	animation: corazonAnim 10s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
@@ -20,8 +20,7 @@ html {
 		border-radius: 50%;
 		margin: 10px;
 		padding: 10px;
-		transform: rotate(360deg);
-		transform: skewY(5deg);
+		transform: rotate(360deg) skewY(5deg);
 	}
 
 	100% {
