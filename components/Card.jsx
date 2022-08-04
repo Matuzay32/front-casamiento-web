@@ -91,7 +91,7 @@ export default function Card(props) {
 							_hover={{
 								transform: "translateY(-2px)",
 								boxShadow: "lg",
-								backgroundColor: "#d5b063",
+								backgroundColor: 100,
 							}}
 						>
 							{botonTexto}
