@@ -62,12 +62,14 @@ export default function sugerirMusica() {
 		// event.preventDefault()
 		const formData = new FormData(form);
 		const nombre = formData.get("nombre");
+		const cantidad = formData.get("cantidad");
 		const apellido = formData.get("apellido");
 
 		if (formData && nombre && apellido) {
 			const persona = {
 				nombre,
 				apellido,
+				cantidad,
 			};
 			console.log(persona, "probando");
 
@@ -137,6 +139,29 @@ export default function sugerirMusica() {
 						<Stack spacing={4}>
 							{/* <form ref={refForm}> */}
 
+							<FormLabel
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Cantidad
+							</FormLabel>
+							<Input
+								type={"number"}
+								required
+								placeholder="Cantidad de invitados"
+								name="cantidad"
+								bg={"gray.100"}
+								border={0}
+								color={"gray.500"}
+								_placeholder={{
+									color: "gray.500",
+								}}
+							/>
 							<FormLabel
 								fontSize={"md"}
 								fontWeight={500}
