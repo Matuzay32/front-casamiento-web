@@ -53,7 +53,7 @@ export default function SectionGaleriaFotos() {
 
 			<PillPity
 				pos={"relative"}
-				pattern={"glamorous"}
+				pattern={"architect"}
 				patternFill={patterFill}
 				patOpacity={0.5}
 				bgColor={100}
