@@ -56,7 +56,7 @@ export default function SectionGaleriaFotos() {
 				pattern={"glamorous"}
 				patternFill={patterFill}
 				patOpacity={0.5}
-				bgColor="#d5b063"
+				bgColor={100}
 				as={Box}
 				overflow="hidden"
 				h={"auto"}
