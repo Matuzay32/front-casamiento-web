@@ -91,13 +91,11 @@ export default function Home() {
 			<Box
 				width={{ base: "full", sm: "full", lg: "full" }}
 				margin={"auto"}
-				height={"80vh"}
+				height={"100vh"}
 				clipPath={
 					"polygon(50% 0%, 100% 0, 100% 35%, 100% 100%, 80% 90%, 50% 100%, 20% 90%, 0 100%, 0% 35%,0% 35%,  0 0)"
 				}
-				backgroundImage={
-					"url('https://images.unsplash.com/photo-1595407753234-0882f1e77954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
-				}
+				backgroundImage={"url('images/fotoCentral.jpeg')"}
 				backgroundSize={"cover"}
 				backgroundPosition="center"
 				backgroundRepeat="no-repeat"
@@ -138,7 +136,7 @@ export default function Home() {
 									fontSize={{ base: "30px", sm: "30px", xl: "60px" }}
 									color={"white"}
 								>
-									Maria
+									Maru
 								</Heading>
 								<Heading
 									className="mariaLucho"
