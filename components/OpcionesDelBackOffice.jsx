@@ -13,6 +13,13 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import { BiLogIn, BiLogOut } from "react-icons/bi";
+import {
+	BsFillClockFill,
+	BsCameraFill,
+	BsSpotify,
+	BsCardChecklist,
+} from "react-icons/bs";
+
 import { GiOfficeChair } from "react-icons/gi";
 import { useState } from "react";
 import {
@@ -26,27 +33,27 @@ import {
 const LinkItems = [
 	{
 		name: "Cambiar Horario ",
-		icon: BiLogIn,
+		icon: BsFillClockFill,
 		href: "/backOffice/cambiarHorario",
 	},
 	{
 		name: "Cambiar Foto Central",
-		icon: BiLogOut,
+		icon: BsCameraFill,
 		href: "/backOffice/fotoCentral",
 	},
 	{
 		name: "Fotos de la Galeria",
-		icon: GiOfficeChair,
+		icon: BsCameraFill,
 		href: "/backOffice/fotosGaleria",
 	},
 	{
 		name: "Lista de invitados",
-		icon: GiOfficeChair,
+		icon: BsCardChecklist,
 		href: "/backOffice/invitados",
 	},
 	{
 		name: "Lista de musica",
-		icon: GiOfficeChair,
+		icon: BsSpotify,
 		href: "/backOffice/listaMusica",
 	},
 ];
@@ -76,6 +83,7 @@ export default function OpcionesDelBackOffice() {
 						color: "white",
 					}}
 				>
+					Opciones del Back Office
 					<ChevronDownIcon w={6} h={6} />
 				</Button>
 			))}
