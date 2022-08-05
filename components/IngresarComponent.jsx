@@ -41,8 +41,11 @@ import {
 	FaYoutube,
 	FaShoppingCart,
 } from "react-icons/fa";
+import { PillPity } from "pill-pity";
 
 export default function IngresarComponent() {
+	const patterFill = useColorModeValue("white", "brand.300");
+
 	const refForm = useRef();
 	const router = useRouter();
 	const { push } = router;
@@ -88,14 +91,19 @@ export default function IngresarComponent() {
 	};
 
 	return (
-		<Box
+		<PillPity
 			position={"relative"}
 			w={"full"}
-			backgroundSize={"cover"}
-			backgroundPosition={"25% 40%"}
-			backgroundImage={
-				"url(https://images.unsplash.com/photo-1554223090-7e482851df45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=803&q=80)"
-			}
+			// backgroundSize={"cover"}
+			// backgroundPosition={"25% 50%"}
+			// backgroundImage={
+			// 	"url(https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)"
+			// }
+			pattern={"architect"}
+			patternFill={patterFill}
+			patOpacity={0.5}
+			bgColor={300}
+			as={Box}
 		>
 			{/* <PopUpModal modalContent={modalContent}></PopUpModal> */}
 
@@ -107,18 +115,6 @@ export default function IngresarComponent() {
 				py={{ base: 10, sm: 20, lg: 32 }}
 			>
 				<Stack spacing={{ base: 10, md: 20 }}>
-					<Heading
-						color={1900}
-						lineHeight={1.1}
-						fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
-					>
-						<Text color={"#6CC4A1"} as={"span"}>
-							Thank you
-						</Text>{" "}
-						<Text color={"#73A9AD"}>for choosing </Text>
-						<Text color={"#F5F0BB"}>us</Text>
-					</Heading>
-
 					<Stack direction={"row"} spacing={4} align={"center"}></Stack>
 				</Stack>
 				<Stack
@@ -147,8 +143,8 @@ export default function IngresarComponent() {
 							<FormLabel>
 								Username{" "}
 								<Text color={"gray.500"}>
-									(maximum length 16 at least one number and one capital
-									letter):
+									((longitud máxima 16 al menos un número y una letra
+									mayúscula):
 								</Text>
 							</FormLabel>
 							<Input
@@ -191,33 +187,26 @@ export default function IngresarComponent() {
 									color: "gray.500",
 								}}
 							/>
+
 							<Button
-								// type="submit"
 								onClick={(e) => handleSumbit(e)}
-								rounded={"none"}
 								w={"full"}
 								mt={8}
-								size={"lg"}
-								p={"7"}
-								bg={useColorModeValue(100, 200)}
-								color={useColorModeValue("white", "gray")}
-								textTransform={"uppercase"}
-								leftIcon={<AiFillIdcard w={5} h={10} />}
+								bg={useColorModeValue("#151f21", "gray.900")}
+								color={"white"}
+								rounded={"2xl"}
 								_hover={{
-									// transform: "translateY(2px)",
-									// boxShadow: "lg",
-									transform: "translateY(10px)",
-
-									bg: 200,
+									transform: "translateY(-2px)",
+									boxShadow: "lg",
+									backgroundColor: "#d5b063",
 								}}
 							>
-								Sign In
+								Sugerir
 							</Button>
-							{/* </form> */}
 						</Stack>
 					</Box>
 				</Stack>
 			</Container>
-		</Box>
+		</PillPity>
 	);
 }
