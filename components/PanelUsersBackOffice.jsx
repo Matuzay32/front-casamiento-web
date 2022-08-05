@@ -24,7 +24,7 @@ import {
 } from "@chakra-ui/icons";
 
 const LinkItems = [
-	{ name: "Ingresar ", icon: BiLogIn, href: "/login" },
+	{ name: "Ingresar ", icon: BiLogIn, href: "/ingresar" },
 	{ name: "cerrar sesión", icon: BiLogOut, href: "" },
 	{ name: "Back office", icon: GiOfficeChair, href: "/backOffice" },
 ];
