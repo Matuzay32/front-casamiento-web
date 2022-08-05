@@ -1,5 +1,12 @@
 import React from "react";
+import { Box, Text } from "@chakra-ui/react";
+import OpcionesDelBackOffice from "../components/OpcionesDelBackOffice";
 
 export default function backOffice() {
-	return <div>backOffice</div>;
+	return (
+		<Box>
+			<Text>backOffice</Text>
+			<OpcionesDelBackOffice />
+		</Box>
+	);
 }
