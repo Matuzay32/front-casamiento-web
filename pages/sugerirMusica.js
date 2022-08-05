@@ -69,11 +69,9 @@ export default function sugerirMusica() {
 		const autor = formData.get("autor");
 		const linkCancion = formData.get("linkCancion");
 
-		if (formData && nombre && autor && linkCancion) {
+		if (formData && linkCancion) {
 			const cancion = {
-				nombre,
 				linkCancion,
-				autor,
 			};
 			console.log(cancion, "probando");
 
