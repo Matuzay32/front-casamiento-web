@@ -4,7 +4,13 @@ import { Box } from "@chakra-ui/react";
 export default function Spotify(props) {
 	const { url } = props;
 	return (
-		<Box m={5} maxW={"370px"} w={"full"}>
+		<Box
+			m={5}
+			borderRadius={"full"}
+			maxW={"370px"}
+			w={"full"}
+			boxShadow={"dark-lg"}
+		>
 			<Box
 				w={"100%"}
 				height={"auto"}
@@ -13,6 +19,7 @@ export default function Spotify(props) {
 				alignItems={"center"}
 			>
 				<Box
+					borderRadius={"2xl"}
 					as="iframe"
 					src={`https://embed.spotify.com/?uri=${url}`}
 					// src="https://embed.spotify.com/?uri=https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"

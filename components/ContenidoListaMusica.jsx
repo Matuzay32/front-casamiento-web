@@ -18,6 +18,7 @@ export default function ContenidoListaMusica() {
 	const [spotyLink, setSpotyLink] = useState([
 		{ url: "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5" },
 		{ url: "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ" },
+		{ url: "https://open.spotify.com/artist/6XyY86QOPPrYVGvF9ch6wz" },
 	]);
 
 	return (
