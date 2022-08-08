@@ -10,6 +10,7 @@ import {
 	useColorModeValue,
 	Image,
 	Heading,
+	HStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import Spotify from "./Spotify";
@@ -34,7 +35,6 @@ export default function ContenidoListaMusica() {
 				justifyContent={"center"}
 				direction={"column"}
 				width={"full"}
-				h={"100vh"}
 			>
 				<Heading
 					fontWeight={600}
@@ -51,7 +51,8 @@ export default function ContenidoListaMusica() {
 					width={{ base: "full", sm: "lg", lg: "xl" }}
 					margin={"auto"}
 				></Box>
-				{spotyLink && (
+
+				{spotyLink ? (
 					<Box
 						display={"flex"}
 						justifyContent={"space-evenly"}
@@ -64,6 +65,40 @@ export default function ContenidoListaMusica() {
 							);
 						})}
 					</Box>
+				) : (
+					<HStack mt={10} p={3} justifyContent={"center"} w={"full"}>
+						<Box
+							boxShadow={"dark-lg"}
+							rounded={"xl"}
+							p={6}
+							h="auto"
+							maxW={"270px"}
+							bg={"white"}
+						>
+							<Heading
+								fontSize={"xl"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								borderBottomWidth={{ base: "2px", md: "2px" }}
+							>
+								Música
+							</Heading>
+							<Text
+								fontSize={"xl"}
+								fontWeight={500}
+								color={"gray.500"}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								textTransform={"capitalize"}
+							>
+								No hay temas en su lista de sugerencias musicales
+							</Text>
+						</Box>
+					</HStack>
 				)}
 			</Flex>
 		</>
