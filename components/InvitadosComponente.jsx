@@ -46,7 +46,18 @@ const InvitadoContenido = ({ children }) => {
 
 const InvitadoTitulo = ({ children }) => {
 	return (
-		<Heading textTransform={"capitalize"} as={"h3"} fontSize={"xl"}>
+		<Heading
+			fontSize={"xl"}
+			fontWeight={500}
+			color={100}
+			fontFamily={"body"}
+			width={"100%"}
+			mb={"1rem"}
+			borderBottomWidth={{ base: "2px", md: "2px" }}
+			textTransform={"capitalize"}
+			as={"h3"}
+			// fontSize={"xl"}
+		>
 			{children}
 		</Heading>
 	);
@@ -57,7 +68,7 @@ const InvitadoTexto = ({ children }) => {
 		<Text
 			textTransform={"capitalize"}
 			textAlign={"center"}
-			color={useColorModeValue("gray.600", "gray.400")}
+			color={"gray.500"}
 			fontSize={"sm"}
 		>
 			{children}
@@ -78,11 +89,24 @@ const InvitadoCantidad = ({ src, name, cantidad }) => {
 				spacing={-1}
 				align={"center"}
 			>
-				<Text mt={3} mb={3} fontWeight={600}>
+				<Text
+					fontSize={"lg"}
+					fontWeight={500}
+					p="1"
+					color={100}
+					fontFamily={"body"}
+					width={"100%"}
+					mb={3}
+					borderBottomWidth={{ base: "1px", md: "1px" }}
+					textTransform={"capitalize"}
+					mt={3}
+				>
 					{name}
 				</Text>
 
-				<Text fontWeight={600}>{cantidad}</Text>
+				<Text color={"gray.500"} fontWeight={500}>
+					{cantidad}
+				</Text>
 			</Stack>
 		</Flex>
 	);

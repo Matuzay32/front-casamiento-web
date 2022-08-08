@@ -7,11 +7,12 @@ import {
 	Flex,
 	Icon,
 	SimpleGrid,
+	HStack,
 	useColorModeValue,
 	Image,
 	Heading,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InvitadosComponente from "./InvitadosComponente";
 import Spotify from "./Spotify";
 
@@ -22,6 +23,24 @@ export default function ContenidoListaInvitados() {
 		{ nombre: "Pablo", apellido: "pucheti", estado: "confirmado", cantidad: 5 },
 		{ nombre: "Juan", apellido: "anosini", estado: "confirmado", cantidad: 7 },
 	]);
+
+	const cantidadTotal = () => {
+		if (
+			invitadoContenido ||
+			invitadoContenido != undefined ||
+			invitadoContenido != null
+		) {
+			return invitadoContenido.map((x) => x.cantidad).reduce((x, y) => x + y);
+		} else {
+			return "Aun no hay invitados en confirmados";
+		}
+	};
+
+	useEffect(() => {
+		return () => {
+			console.log(cantidadTotal());
+		};
+	}, [invitadoContenido]);
 
 	return (
 		<>
@@ -48,22 +67,61 @@ export default function ContenidoListaInvitados() {
 					width={{ base: "full", sm: "lg", lg: "xl" }}
 					margin={"auto"}
 				></Box>
-				<Box
-					display={"flex"}
-					justifyContent={"space-evenly"}
-					flexFlow={{ base: "column", sm: "wrap", lg: "wrap" }}
-					mt={10}
-				>
-					{invitadoContenido?.map((invitadoInfo, index) => {
-						return (
-							<InvitadosComponente
-								key={`invitado${index}`}
-								{...invitadoInfo}
-								index={index}
-							/>
-						);
-					})}
-				</Box>
+
+				{cantidadTotal() && (
+					<HStack mt={10} p={3} justifyContent={"center"} w={"full"}>
+						<Box
+							boxShadow={"dark-lg"}
+							rounded={"xl"}
+							p={6}
+							h="auto"
+							maxW={"270px"}
+							bg={"white"}
+						>
+							<Heading
+								fontSize={"xl"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								borderBottomWidth={{ base: "2px", md: "2px" }}
+								textTransform={"capitalize"}
+							>
+								Invitados
+							</Heading>
+							<Text
+								fontSize={"xl"}
+								fontWeight={500}
+								color={"gray.500"}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								textTransform={"capitalize"}
+							>
+								{cantidadTotal()}
+							</Text>
+						</Box>
+					</HStack>
+				)}
+				{invitadoContenido && (
+					<Box
+						display={"flex"}
+						justifyContent={"space-evenly"}
+						flexFlow={{ base: "column", sm: "wrap", lg: "wrap" }}
+						mt={10}
+					>
+						{invitadoContenido?.map((invitadoInfo, index) => {
+							return (
+								<InvitadosComponente
+									key={`invitado${index}`}
+									{...invitadoInfo}
+									index={index}
+								/>
+							);
+						})}
+					</Box>
+				)}
 			</Flex>
 		</>
 	);
