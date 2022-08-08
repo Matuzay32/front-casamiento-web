@@ -32,6 +32,7 @@ export default function ContenidoListaMusica() {
 				justifyContent={"center"}
 				direction={"column"}
 				width={"full"}
+				h={"100vh"}
 			>
 				<Heading
 					fontWeight={600}
@@ -48,18 +49,20 @@ export default function ContenidoListaMusica() {
 					width={{ base: "full", sm: "lg", lg: "xl" }}
 					margin={"auto"}
 				></Box>
-				<Box
-					display={"flex"}
-					justifyContent={"space-evenly"}
-					flexFlow={{ base: "column", sm: "wrap", lg: "wrap" }}
-					mt={10}
-				>
-					{spotyLink?.map((spotifyInfo, index) => {
-						return (
-							<Spotify key={`spoty${index}`} {...spotifyInfo} index={index} />
-						);
-					})}
-				</Box>
+				{spotyLink && (
+					<Box
+						display={"flex"}
+						justifyContent={"space-evenly"}
+						flexFlow={{ base: "column", sm: "wrap", lg: "wrap" }}
+						mt={10}
+					>
+						{spotyLink?.map((spotifyInfo, index) => {
+							return (
+								<Spotify key={`spoty${index}`} {...spotifyInfo} index={index} />
+							);
+						})}
+					</Box>
+				)}
 			</Flex>
 		</>
 	);
