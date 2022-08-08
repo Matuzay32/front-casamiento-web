@@ -12,15 +12,15 @@ import {
 	Heading,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import InvitadosComponente from "./InvitadosComponente";
 import Spotify from "./Spotify";
 
-export default function ContenidoListaMusica() {
-	const [spotyLink, setSpotyLink] = useState([
-		{ url: "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5" },
-		{ url: "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ" },
-		{ url: "https://open.spotify.com/artist/6XyY86QOPPrYVGvF9ch6wz" },
-		{ url: "https://open.spotify.com/artist/1Cs0zKBU1kc0i8ypK3B9ai" },
-		{ url: "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi" },
+export default function ContenidoListaInvitados() {
+	const [invitadoContenido, setInvitadoContenido] = useState([
+		{ nombre: "Ezequiel", apellido: "rey", estado: "confirmado", cantidad: 2 },
+		{ nombre: "Ana", apellido: "Radal", estado: "confirmado", cantidad: 3 },
+		{ nombre: "Pablo", apellido: "pucheti", estado: "confirmado", cantidad: 5 },
+		{ nombre: "Juan", apellido: "anosini", estado: "confirmado", cantidad: 7 },
 	]);
 
 	return (
@@ -54,9 +54,13 @@ export default function ContenidoListaMusica() {
 					flexFlow={{ base: "column", sm: "wrap", lg: "wrap" }}
 					mt={10}
 				>
-					{spotyLink?.map((spotifyInfo, index) => {
+					{invitadoContenido?.map((invitadoInfo, index) => {
 						return (
-							<Spotify key={`spoty${index}`} {...spotifyInfo} index={index} />
+							<InvitadosComponente
+								key={`invitado${index}`}
+								{...invitadoInfo}
+								index={index}
+							/>
 						);
 					})}
 				</Box>
