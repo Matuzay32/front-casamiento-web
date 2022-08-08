@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 const Invitado = ({ children }) => {
-	return <Box>{children}</Box>;
+	return <Box br>{children}</Box>;
 };
 
 const InvitadoContenido = ({ children }) => {
@@ -46,7 +46,7 @@ const InvitadoContenido = ({ children }) => {
 
 const InvitadoTitulo = ({ children }) => {
 	return (
-		<Heading as={"h3"} fontSize={"xl"}>
+		<Heading textTransform={"capitalize"} as={"h3"} fontSize={"xl"}>
 			{children}
 		</Heading>
 	);
@@ -55,6 +55,7 @@ const InvitadoTitulo = ({ children }) => {
 const InvitadoTexto = ({ children }) => {
 	return (
 		<Text
+			textTransform={"capitalize"}
 			textAlign={"center"}
 			color={useColorModeValue("gray.600", "gray.400")}
 			fontSize={"sm"}
@@ -64,15 +65,24 @@ const InvitadoTexto = ({ children }) => {
 	);
 };
 
-const InvitadoAvatar = ({ src, name, title }) => {
+const InvitadoCantidad = ({ src, name, cantidad }) => {
 	return (
 		<Flex align={"center"} mt={8} direction={"column"}>
-			<Avatar src={src} alt={name} mb={2} />
-			<Stack spacing={-1} align={"center"}>
-				<Text fontWeight={600}>{name}</Text>
-				<Text fontSize={"sm"} color={useColorModeValue("gray.600", "gray.400")}>
-					{title}
+			<Stack
+				boxShadow={"2xl"}
+				h="100px"
+				w="100px"
+				borderRadius={"full"}
+				alignItems={"center"}
+				bg={"white"}
+				spacing={-1}
+				align={"center"}
+			>
+				<Text mt={3} mb={3} fontWeight={600}>
+					{name}
 				</Text>
+
+				<Text fontWeight={600}>{cantidad}</Text>
 			</Stack>
 		</Flex>
 	);
@@ -96,12 +106,12 @@ export default function InvitadosComponente({
 							<InvitadoTitulo>{`${nombre} ${apellido} `}</InvitadoTitulo>
 							<InvitadoTexto>{estado}</InvitadoTexto>
 						</InvitadoContenido>
-						<InvitadoAvatar
+						<InvitadoCantidad
 							src={
 								"https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
 							}
-							name={"Jane Cooper"}
-							title={"CEO at ABC Corporation"}
+							name={"Cantidad"}
+							cantidad={cantidad}
 						/>
 					</Invitado>
 				</Stack>
