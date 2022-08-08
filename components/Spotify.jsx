@@ -7,7 +7,7 @@ export default function Spotify(props) {
 		<Box
 			m={5}
 			borderRadius={"full"}
-			maxW={"370px"}
+			maxW={"270px"}
 			w={"full"}
 			boxShadow={"dark-lg"}
 		>

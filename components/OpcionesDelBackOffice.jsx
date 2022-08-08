@@ -74,6 +74,7 @@ export default function OpcionesDelBackOffice() {
 			{sizes.map((size, index) => (
 				<Button
 					borderRadius={"full"}
+					fontSize={{ base: "sm", lg: "large", md: "md" }}
 					bg={100}
 					onClick={() => handleClick(size)}
 					key={`${size}${index}`}

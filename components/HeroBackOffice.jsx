@@ -32,7 +32,7 @@ export default function HeroBackOffice({ titulo, parrafo, color, gradiante }) {
 				>
 					<Heading
 						fontWeight={600}
-						fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+						fontSize={{ base: "4xl", sm: "4xl", md: "6xl" }}
 						lineHeight={"110%"}
 					>
 						Back office
@@ -41,7 +41,12 @@ export default function HeroBackOffice({ titulo, parrafo, color, gradiante }) {
 							{titulo}
 						</Text>
 					</Heading>
-					<Text color={"gray.500"}>{parrafo}</Text>
+					<Text
+						fontSize={{ base: "sm", md: "md", lg: "large" }}
+						color={"gray.500"}
+					>
+						{parrafo}
+					</Text>
 					<Stack
 						direction={"column"}
 						spacing={3}

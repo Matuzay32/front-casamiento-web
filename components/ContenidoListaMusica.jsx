@@ -20,6 +20,7 @@ export default function ContenidoListaMusica() {
 		{ url: "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ" },
 		{ url: "https://open.spotify.com/artist/6XyY86QOPPrYVGvF9ch6wz" },
 		{ url: "https://open.spotify.com/artist/1Cs0zKBU1kc0i8ypK3B9ai" },
+		{ url: "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi" },
 	]);
 
 	return (
@@ -34,7 +35,7 @@ export default function ContenidoListaMusica() {
 			>
 				<Heading
 					fontWeight={600}
-					fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+					fontSize={{ base: "4xl", sm: "4xl", md: "6xl" }}
 					lineHeight={"110%"}
 					color={"white"}
 					textShadow={"-5px -2px 0px #ffecec7a"}
@@ -51,7 +52,6 @@ export default function ContenidoListaMusica() {
 					display={"flex"}
 					justifyContent={"space-evenly"}
 					flexFlow={{ base: "column", sm: "wrap", lg: "wrap" }}
-					spacing={"2"}
 					mt={10}
 				>
 					{spotyLink?.map((spotifyInfo, index) => {
