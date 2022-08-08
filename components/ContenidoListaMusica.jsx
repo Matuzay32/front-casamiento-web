@@ -19,6 +19,7 @@ export default function ContenidoListaMusica() {
 		{ url: "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5" },
 		{ url: "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ" },
 		{ url: "https://open.spotify.com/artist/6XyY86QOPPrYVGvF9ch6wz" },
+		{ url: "https://open.spotify.com/artist/1Cs0zKBU1kc0i8ypK3B9ai" },
 	]);
 
 	return (
@@ -31,7 +32,17 @@ export default function ContenidoListaMusica() {
 				direction={"column"}
 				width={"full"}
 			>
+				<Heading
+					fontWeight={600}
+					fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+					lineHeight={"110%"}
+					color={"white"}
+					textShadow={"-5px -2px 0px #ffecec7a"}
+				>
+					Lista
+				</Heading>
 				<Box
+					boxShadow={"dark-lg"}
 					height={"auto"}
 					width={{ base: "full", sm: "lg", lg: "xl" }}
 					margin={"auto"}

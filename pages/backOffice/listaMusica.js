@@ -6,10 +6,10 @@ import HeroBackOffice from "../../components/HeroBackOffice";
 
 export default function listaMusica() {
 	return (
-		<>
+		<Box backgroundImage="linear-gradient(white,  #f7d7ac, #B2936C)">
 			<Box>
 				<HeroBackOffice
-					color={400}
+					color={"#2C7A7B"}
 					titulo={"Lista de canciones"}
 					parrafo={
 						"Estas son las sugerencias musicales que ponen los invitados para el casamiento, ideal para arma la playlist perfecta"
@@ -17,6 +17,6 @@ export default function listaMusica() {
 				></HeroBackOffice>
 			</Box>
 			<ContenidoListaMusica></ContenidoListaMusica>
-		</>
+		</Box>
 	);
 }

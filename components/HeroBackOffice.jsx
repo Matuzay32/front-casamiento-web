@@ -13,7 +13,7 @@ import {
 	createIcon,
 } from "@chakra-ui/react";
 
-export default function HeroBackOffice({ titulo, parrafo, color }) {
+export default function HeroBackOffice({ titulo, parrafo, color, gradiante }) {
 	return (
 		<>
 			<Head>
