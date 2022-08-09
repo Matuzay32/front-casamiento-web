@@ -52,7 +52,6 @@ export default function ConfirmarAsistenciaComponent() {
 		setModalContent("");
 		const { current: form } = refForm;
 		// const formData = new FormData(form);
-
 		// este va ser el fetch que va mandar el  la confirmacion de asistencia
 		// fetchRegisterPagePost(user).then((x) => {
 		// 	let nombre = formData.get("nombre");
