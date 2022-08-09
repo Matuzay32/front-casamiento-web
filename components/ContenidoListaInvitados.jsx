@@ -15,6 +15,7 @@ import {
 import { useState, useEffect } from "react";
 import InvitadosComponente from "./InvitadosComponente";
 import Spotify from "./Spotify";
+import PruebaInvitado from "./InvitadosComponente";
 
 export default function ContenidoListaInvitados() {
 	const [invitadoContenido, setInvitadoContenido] = useState([
@@ -78,29 +79,34 @@ export default function ContenidoListaInvitados() {
 							maxW={"270px"}
 							bg={"white"}
 						>
-							<Heading
-								fontSize={"xl"}
-								fontWeight={500}
-								color={100}
-								fontFamily={"body"}
-								width={"100%"}
-								mb={"1rem"}
-								borderBottomWidth={{ base: "2px", md: "2px" }}
-								textTransform={"capitalize"}
+							<chakra.h2
+								borderBottomWidth={"2px"}
+								color="100"
+								_dark={{
+									color: "white",
+								}}
+								fontSize={{
+									base: "2xl",
+									md: "3xl",
+								}}
+								mt={{
+									base: 2,
+									md: 0,
+								}}
+								fontWeight="bold"
 							>
 								Invitados
-							</Heading>
-							<Text
+							</chakra.h2>
+							<chakra.p
 								fontSize={"xl"}
-								fontWeight={500}
-								color={"gray.500"}
-								fontFamily={"body"}
-								width={"100%"}
-								mb={"1rem"}
-								textTransform={"capitalize"}
+								mt={2}
+								color="gray.400"
+								_dark={{
+									color: "gray.200",
+								}}
 							>
 								{cantidadTotal()}
-							</Text>
+							</chakra.p>
 						</Box>
 					</HStack>
 				)}
