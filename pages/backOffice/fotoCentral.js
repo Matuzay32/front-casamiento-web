@@ -13,6 +13,7 @@ export default function fotoCentral() {
 		>
 			<Box>
 				<HeroBackOffice
+					colorPrimerTitulo={"wheat"}
 					colorParrafo={"white"}
 					color={"white"}
 					titulo={"Cambiar foto central"}

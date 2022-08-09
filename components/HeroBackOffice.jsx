@@ -19,6 +19,7 @@ export default function HeroBackOffice({
 	color,
 	gradiante,
 	colorParrafo,
+	colorPrimerTitulo,
 }) {
 	return (
 		<>
@@ -40,6 +41,7 @@ export default function HeroBackOffice({
 						fontWeight={600}
 						fontSize={{ base: "4xl", sm: "4xl", md: "6xl" }}
 						lineHeight={"110%"}
+						color={colorPrimerTitulo}
 					>
 						Back office
 						<br />

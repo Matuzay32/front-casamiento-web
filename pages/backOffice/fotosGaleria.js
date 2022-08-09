@@ -13,6 +13,7 @@ export default function fotosGaleria() {
 		>
 			<Box>
 				<HeroBackOffice
+					colorPrimerTitulo={"wheat"}
 					colorParrafo={"white"}
 					color={"white"}
 					titulo={"Galeria de fotos"}
