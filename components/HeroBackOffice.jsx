@@ -13,7 +13,13 @@ import {
 	createIcon,
 } from "@chakra-ui/react";
 
-export default function HeroBackOffice({ titulo, parrafo, color, gradiante }) {
+export default function HeroBackOffice({
+	titulo,
+	parrafo,
+	color,
+	gradiante,
+	colorParrafo,
+}) {
 	return (
 		<>
 			<Head>
@@ -43,7 +49,7 @@ export default function HeroBackOffice({ titulo, parrafo, color, gradiante }) {
 					</Heading>
 					<Text
 						fontSize={{ base: "sm", md: "md", lg: "large" }}
-						color={"gray.500"}
+						color={colorParrafo}
 					>
 						{parrafo}
 					</Text>
