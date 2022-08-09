@@ -5,7 +5,7 @@ export default function Spotify(props) {
 	const { url } = props;
 	return (
 		<Box
-			m={5}
+			m={10}
 			borderRadius={"full"}
 			maxW={"270px"}
 			w={"full"}
