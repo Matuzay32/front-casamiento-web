@@ -39,7 +39,7 @@ import {
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
 
-export default function GaleriaFotosCargar() {
+export default function CambiarFotoCentral() {
 	const patterFill = useColorModeValue("white", "brand.300");
 
 	const router = useRouter();
@@ -125,11 +125,10 @@ export default function GaleriaFotosCargar() {
 							lineHeight={1.1}
 							// fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
 						>
-							Cargar imagenes
+							Cargar imagen central
 						</Heading>
 						<Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-							Esto sirve para que se carguen las fotos en la galeria simplemente
-							seleccione las que desea y búsquelas en su ordenador
+							Este formulario sirve para cambiar la foto principal
 						</Text>
 					</Stack>
 					<Box as={"form"} mt={10} ref={refForm}>
@@ -145,7 +144,7 @@ export default function GaleriaFotosCargar() {
 								mb={"1rem"}
 								lineHeight={1.1}
 							>
-								Cargue las imagenes para la galeria de fotos{" "}
+								Cargue la imagen para la foto central
 							</FormLabel>
 
 							<Input
