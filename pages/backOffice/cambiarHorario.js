@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Center } from "@chakra-ui/react";
 import HeroBackOffice from "../../components/HeroBackOffice";
-import CambiarFotoCentral from "../../components/CambiarFotoCentral";
+import CambiarHorario from "../../components/CambiarHorario";
 
 export default function cambiarHorario() {
 	return (
@@ -22,7 +22,7 @@ export default function cambiarHorario() {
 					}
 				></HeroBackOffice>
 			</Box>
-			<CambiarFotoCentral></CambiarFotoCentral>
+			<CambiarHorario></CambiarHorario>
 		</Box>
 	);
 }
