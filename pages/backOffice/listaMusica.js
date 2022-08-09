@@ -6,7 +6,12 @@ import HeroBackOffice from "../../components/HeroBackOffice";
 
 export default function listaMusica() {
 	return (
-		<Box backgroundImage="linear-gradient(wheat,  teal, black)">
+		<Box
+			backgroundSize={"cover"}
+			backgroundPosition={"50% 50%"}
+			backgroundImage={"url('../images/fondoSpotify.jpg')"}
+			// backgroundImage="linear-gradient(white,  teal, black)"
+		>
 			<Box>
 				<HeroBackOffice
 					colorParrafo={"white"}

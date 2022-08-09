@@ -5,7 +5,12 @@ import GaleriaFotosCargar from "../../components/GaleriaFotosCargar";
 
 export default function fotosGaleria() {
 	return (
-		<Box backgroundImage="linear-gradient(wheat, #FF8C00, black)">
+		<Box
+			// backgroundImage="linear-gradient(wheat, #FF8C00, black)"
+			backgroundSize={"cover"}
+			backgroundPosition={"10% 50%"}
+			backgroundImage={"url('../images/fondoGalerias.jpg')"}
+		>
 			<Box>
 				<HeroBackOffice
 					colorParrafo={"white"}

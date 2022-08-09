@@ -6,10 +6,16 @@ import ContenidoListaInvitados from "../../components/ContenidoListaInvitados";
 
 export default function listaMusica() {
 	return (
-		<Box backgroundImage="linear-gradient(white,  #f7d7ac, #B2936C)">
+		<Box
+			// backgroundImage="linear-gradient(white,  #f7d7ac, #B2936C)"
+			backgroundSize={"cover"}
+			backgroundPosition={"50% 50%"}
+			backgroundImage={"url('../images/fondoInvitaciones.jpg')"}
+		>
 			<Box>
 				<HeroBackOffice
-					color={"#2C7A7B"}
+					colorParrafo={"white"}
+					color={"white"}
 					titulo={"Lista de invitados"}
 					parrafo={
 						"Esta es la lista de invitados confirmados para el casamiento"

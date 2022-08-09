@@ -5,12 +5,17 @@ import CambiarFotoCentral from "../../components/CambiarFotoCentral";
 
 export default function fotoCentral() {
 	return (
-		<Box backgroundImage="linear-gradient(wheat, #548a8a, black)">
+		<Box
+			// backgroundImage="linear-gradient(wheat, #FF8C00, black)"
+			backgroundSize={"cover"}
+			backgroundPosition={"100% 50%"}
+			backgroundImage={"url('../images/fondoGalerias.jpg')"}
+		>
 			<Box>
 				<HeroBackOffice
 					colorParrafo={"white"}
 					color={"white"}
-					titulo={"Galeria de fotos"}
+					titulo={"Cambiar foto central"}
 					parrafo={"Esta sección  es para poder cambiar la imagen principal"}
 				></HeroBackOffice>
 			</Box>
