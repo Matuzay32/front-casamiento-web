@@ -90,6 +90,7 @@ export default function ConfirmarAsistenciaComponent() {
 		<PillPity
 			position={"relative"}
 			w={"full"}
+			h={"auto"}
 			// backgroundSize={"cover"}
 			// backgroundPosition={"25% 50%"}
 			// backgroundImage={
