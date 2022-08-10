@@ -17,13 +17,13 @@ import Spotify from "./Spotify";
 
 export default function ContenidoListaMusica() {
 	const [spotyLink, setSpotyLink] = useState([
-		{ url: "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5" },
-		{ url: "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi" },
-		{ url: "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ" },
-		{ url: "https://open.spotify.com/artist/6XyY86QOPPrYVGvF9ch6wz" },
-		{ url: "https://open.spotify.com/artist/1Cs0zKBU1kc0i8ypK3B9ai" },
-		{ url: "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi" },
-		{ url: "https://open.spotify.com/artist/2vaWvC8suCFkRXejDOK7EE" },
+		{ linkCancion: "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5" },
+		{ linkCancion: "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi" },
+		{ linkCancion: "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ" },
+		{ linkCancion: "https://open.spotify.com/artist/6XyY86QOPPrYVGvF9ch6wz" },
+		{ linkCancion: "https://open.spotify.com/artist/1Cs0zKBU1kc0i8ypK3B9ai" },
+		{ linkCancion: "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi" },
+		{ linkCancion: "https://open.spotify.com/artist/2vaWvC8suCFkRXejDOK7EE" },
 	]);
 
 	return (

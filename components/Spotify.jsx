@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 
 export default function Spotify(props) {
-	const { url } = props;
+	const { LinkCancion } = props;
 	return (
 		<Box
 			m={10}
@@ -21,7 +21,7 @@ export default function Spotify(props) {
 				<Box
 					borderRadius={"2xl"}
 					as="iframe"
-					src={`https://embed.spotify.com/?uri=${url}`}
+					src={`https://embed.spotify.com/?uri=${LinkCancion}`}
 					// src="https://embed.spotify.com/?uri=https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
 					width="100%"
 					sx={{
