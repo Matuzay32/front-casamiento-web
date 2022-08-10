@@ -16,6 +16,7 @@ import { useState, useEffect } from "react";
 import InvitadosComponente from "./InvitadosComponente";
 import Spotify from "./Spotify";
 import PruebaInvitado from "./InvitadosComponente";
+import { muestraTodosLosInvitados } from "../constantes/invitado";
 
 export default function ContenidoListaInvitados() {
 	const [invitadoContenido, setInvitadoContenido] = useState([
@@ -33,16 +34,18 @@ export default function ContenidoListaInvitados() {
 		) {
 			return invitadoContenido.map((x) => x.cantidad).reduce((x, y) => x + y);
 		} else {
-			return "Aun no hay invitados en confirmados";
+			return "Aun no hay invitados confirmados";
 		}
 	};
 
 	useEffect(() => {
-		return () => {
-			console.log(cantidadTotal());
-		};
-	}, [invitadoContenido]);
+		muestraTodosLosInvitados().then((x) => {
+			const resultado = x.length <= 0 ? null : x;
+			setInvitadoContenido(resultado);
+		});
 
+		return () => {};
+	}, [invitadoContenido]);
 	return (
 		<>
 			<Flex

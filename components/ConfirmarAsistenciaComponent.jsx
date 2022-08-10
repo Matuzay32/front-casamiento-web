@@ -38,6 +38,7 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
+import { creandoInvitado } from "../constantes/invitado";
 
 export default function ConfirmarAsistenciaComponent() {
 	const router = useRouter();
@@ -51,12 +52,8 @@ export default function ConfirmarAsistenciaComponent() {
 	const fetchPost = async (persona) => {
 		setModalContent("");
 		const { current: form } = refForm;
-		// const formData = new FormData(form);
-		// este va ser el fetch que va mandar el  la confirmacion de asistencia
-		// fetchRegisterPagePost(user).then((x) => {
-		// 	let nombre = formData.get("nombre");
-		// 	let apellido = formData.get("apellido");
-		// });
+		//creando el invitado
+		creandoInvitado(persona);
 	};
 
 	const handleSumbit = (event) => {
@@ -73,9 +70,8 @@ export default function ConfirmarAsistenciaComponent() {
 				apellido,
 				cantidad,
 			};
-			console.log(persona, "probando");
 
-			// fetchPost(persona);
+			fetchPost(persona);
 			push("/");
 		} else {
 			setModalContent("Missing dates");
