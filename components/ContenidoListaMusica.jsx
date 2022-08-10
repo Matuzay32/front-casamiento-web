@@ -12,8 +12,9 @@ import {
 	Heading,
 	HStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spotify from "./Spotify";
+import { obteniendoTodosLosLinksDeSpotify } from "../constantes/spotify";
 
 export default function ContenidoListaMusica() {
 	const [spotyLink, setSpotyLink] = useState([
@@ -25,6 +26,15 @@ export default function ContenidoListaMusica() {
 		{ linkCancion: "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi" },
 		{ linkCancion: "https://open.spotify.com/artist/2vaWvC8suCFkRXejDOK7EE" },
 	]);
+
+	useEffect(() => {
+		obteniendoTodosLosLinksDeSpotify().then((x) => {
+			const resultado = x.length <= 0 ? "" : x;
+			setSpotyLink(resultado);
+		});
+
+		return () => {};
+	}, [spotyLink]);
 
 	return (
 		<>
@@ -93,7 +103,6 @@ export default function ContenidoListaMusica() {
 								fontFamily={"body"}
 								width={"100%"}
 								mb={"1rem"}
-								textTransform={"capitalize"}
 							>
 								No hay temas en su lista de sugerencias musicales
 							</Text>

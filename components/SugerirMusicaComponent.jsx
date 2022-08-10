@@ -38,12 +38,12 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
+import { creandoLinkSpotify } from "../constantes/spotify";
 
 export default function SugerirMusicaComponent() {
 	const patterFill = useColorModeValue("white", "brand.300");
 
 	const router = useRouter();
-	// console.log(router);
 	const { push } = router;
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
@@ -51,14 +51,9 @@ export default function SugerirMusicaComponent() {
 	const fetchPost = async (cancion) => {
 		setModalContent("");
 		const { current: form } = refForm;
-		// const formData = new FormData(form);
 
-		//este va ser el fetch que va mandar el  la sugerencia de temas
-		// fetchRegisterPagePost(user).then((x) => {
-		// 	let nombre = formData.get("nombre");
-		// 	let autor = formData.get("autor");
-		// 	let linkCancion = formData.get("linkCancion");
-		// });
+		//Esto postea la lista de conciones de spotify
+		creandoLinkSpotify(cancion);
 	};
 
 	const handleSumbit = (event) => {
@@ -73,9 +68,7 @@ export default function SugerirMusicaComponent() {
 			const cancion = {
 				linkCancion,
 			};
-			console.log(cancion, "probando");
-
-			// fetchPost(cancion);
+			fetchPost(cancion);
 			push("/");
 		} else {
 			setModalContent("Missing dates");
