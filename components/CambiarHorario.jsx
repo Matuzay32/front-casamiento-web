@@ -38,6 +38,7 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
+import { cargaFechaHora } from "../constantes/fecha";
 
 export default function CambiarHorario() {
 	const router = useRouter();
@@ -53,11 +54,7 @@ export default function CambiarHorario() {
 		const formData = new FormData(form);
 		console.log(fechaHora, "esta es la fecha y la hora");
 
-		// // fetch para la fecha hora
-		// fetchRegisterPagePost(user).then((x) => {
-		// 	let fecha = formData.get("fecha");
-		// 	let hora = formData.get("hora");
-		// });
+		cargaFechaHora(fechaHora);
 	};
 
 	const handleSumbit = (event) => {
@@ -72,9 +69,8 @@ export default function CambiarHorario() {
 				fecha,
 				hora,
 			};
-			console.log(fechaHora, "probando");
 
-			// fetchPost(fechaHora);
+			fetchPost(fechaHora);
 			push("/");
 		} else {
 			setModalContent("Missing dates");

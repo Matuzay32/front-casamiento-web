@@ -10,43 +10,50 @@ import {
 	Stack,
 } from "@chakra-ui/react";
 import PanelUsersBackOffice from "./PanelUsersBackOffice";
+import { fechasHoras } from "../constantes/fecha";
 
 export default function Reloj() {
 	const [timerDays, setTimerDays] = useState("00");
 	const [timerHours, setTimerHours] = useState("00");
 	const [timerMinutes, setTimerMinutes] = useState("00");
 	const [timerSeconds, setTimerSeconds] = useState("00");
+	const [fecha, setFecha] = useState();
 	const interval = useRef();
-
+	//"2022-11-11"
 	const startTimer = () => {
-		const countDownDate = new Date("2022-11-11").getTime();
-		// console.log(new Date("2022-08-28"));
-		interval = setInterval(() => {
-			const now = new Date().getTime();
-			const distance = countDownDate - now;
-			const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-			const hours = Math.floor(
-				(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-			);
-			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		if (fecha) {
+			console.log(fecha, "probando");
+			const countDownDate = new Date(fecha).getTime();
+			interval = setInterval(() => {
+				const now = new Date().getTime();
+				const distance = countDownDate - now;
+				const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				const hours = Math.floor(
+					(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				);
+				const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-			if (distance < 0) {
-				clearInterval(interval.current);
-			} else {
-				setTimerDays(days);
-				setTimerHours(hours);
-				setTimerMinutes(minutes);
-				setTimerSeconds(seconds);
-			}
-		}, 1000);
+				if (distance < 0) {
+					clearInterval(interval.current);
+				} else {
+					setTimerDays(days);
+					setTimerHours(hours);
+					setTimerMinutes(minutes);
+					setTimerSeconds(seconds);
+				}
+			}, 1000);
+		}
 	};
+
 	useEffect(() => {
 		startTimer();
+		fechasHoras().then(({ fecha }) => setFecha(fecha));
+
 		return () => {
 			clearInterval(interval.current);
 		};
-	}, []);
+	}, [fecha]);
 
 	return (
 		<Box
