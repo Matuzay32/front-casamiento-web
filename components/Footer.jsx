@@ -40,7 +40,7 @@ export default function Footer({ targetas: footerLinks }) {
 					alignItems={"center"}
 					spacing={6}
 				>
-					{footerLinks.map((elemento, index) => {
+					{footerLinks?.map((elemento, index) => {
 						const { href, evento } = elemento;
 						return (
 							<Link
