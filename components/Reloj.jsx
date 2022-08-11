@@ -64,6 +64,7 @@ export default function Reloj() {
 			flexFlow={"column"}
 		>
 			<PanelUsersBackOffice />
+
 			<Heading
 				fontSize={"50px"}
 				fontWeight={500}
@@ -74,6 +75,10 @@ export default function Reloj() {
 			>
 				Faltan
 			</Heading>
+			<Text my={5} fontWeight={500} fontSize={"large"} color={"gray.300"}>
+				{fecha}
+			</Text>
+
 			<Box
 				display={"flex"}
 				w={"100%"}
