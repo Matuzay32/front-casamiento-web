@@ -38,6 +38,7 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
+import { guardarNombreImagenes, postAllPhotos } from "../constantes/galeria";
 
 export default function GaleriaFotosCargar() {
 	const patterFill = useColorModeValue("white", "brand.300");
@@ -49,19 +50,11 @@ export default function GaleriaFotosCargar() {
 	const refForm = useRef();
 
 	const fetchPost = async () => {
-		setModalContent("");
 		const { current: form } = refForm;
 		const formData = new FormData(form);
-		console.log(formData, "probando");
-		const files = formData.get("file");
-		console.log(files, "files");
-
-		//esto va a cargar las fotos en la carpeta uploads y devolver los nombres
-		// const namesPhotos = await postAllPhotos(formData);
-		// const imagenesGaleria = { images: namesPhotos };
-
-		//esta es la funcion que va hacer el metodo post a la base de imagenes que va ir a la galeria
-		// createImagenesGaleriaFetch(imagenesGaleria);
+		const namesPhotos = await postAllPhotos(formData);
+		const carConImagenes = {  imagenes: namesPhotos };
+		guardarNombreImagenes(carConImagenes);
 	};
 
 	const handleSumbit = (event) => {
@@ -71,7 +64,7 @@ export default function GaleriaFotosCargar() {
 
 		fetchPost();
 
-		push("/");
+		// push("/");
 	};
 
 	return (
