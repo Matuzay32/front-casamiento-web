@@ -43,18 +43,16 @@ export default function GaleriaFotos() {
 	]);
 
 	useEffect(() => {
+		console.log(muestraTodasLasFotosGaleria());
 		muestraTodasLasFotosGaleria().then((res) => {
-			if (res.at(-1) > 0) {
-				const [{ imagenes }] = res;
-				setSlides(imagenes);
-			}
+			setSlides(res[0]?.imagenes);
 		});
 		console.log(slides, "estado fotos de prueba");
 		return () => {};
 	}, []);
 
 	const [currentSlide, setCurrentSlide] = useState(0);
-	const slidesCount = slides.length;
+	const slidesCount = slides?.length;
 
 	const prevSlide = () => {
 		setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
