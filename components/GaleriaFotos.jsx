@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Flex, Box, HStack, Text, Image } from "@chakra-ui/react";
+import { Flex, Box, HStack, Text, Heading, Image } from "@chakra-ui/react";
 import { muestraTodasLasFotosGaleria } from "../constantes/galeria";
 
 export default function GaleriaFotos() {
-	const arrowStyles = {
+	let arrowStyles = {
 		cursor: "pointer",
 		pos: "absolute",
 		top: "50%",
@@ -21,12 +21,28 @@ export default function GaleriaFotos() {
 			bg: "black",
 		},
 	};
+
 	const [slides, setSlides] = useState([{}]);
 	const [defaultImages, SetdefaultImages] = useState([
 		{
 			nombre: "images/notFound.jpeg",
 		},
 	]);
+	const [currentSlide, setCurrentSlide] = useState(0);
+	const slidesCount = slides?.length;
+	const prevSlide = () => {
+		setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
+	};
+	const nextSlide = () => {
+		setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
+	};
+	const setSlide = (slide) => {
+		setCurrentSlide(slide);
+	};
+	const carouselStyle = {
+		transition: "all 1.5s",
+		ml: `-${currentSlide * 100}%`,
+	};
 
 	useEffect(() => {
 		muestraTodasLasFotosGaleria().then((res) => {
@@ -36,25 +52,6 @@ export default function GaleriaFotos() {
 		return () => {};
 	}, []);
 
-	const [currentSlide, setCurrentSlide] = useState(0);
-	const slidesCount = slides?.length;
-
-	const prevSlide = () => {
-		setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
-	};
-
-	const nextSlide = () => {
-		setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
-	};
-
-	const setSlide = (slide) => {
-		setCurrentSlide(slide);
-	};
-
-	const carouselStyle = {
-		transition: "all 1.5s",
-		ml: `-${currentSlide * 100}%`,
-	};
 	return (
 		<Flex
 			w="full"
@@ -70,21 +67,34 @@ export default function GaleriaFotos() {
 					<Flex h="auto" w="full" {...carouselStyle}>
 						{defaultImages?.map((slide, sid) => {
 							return (
-								<Box
-									p={"30px"}
-									key={`slide-${sid}`}
-									boxSize="full"
-									shadow="md"
-									flex="none"
-								>
-									<Image
-										src={slide.nombre}
-										boxShadow={"dark-lg"}
-										alt="carousel image"
+								<Box>
+									<Text
+										pos={"absolute"}
+										fontSize={"2xl"}
+										fontWeight={500}
+										color={"white"}
+										fontFamily={"body"}
+										width={"100%"}
+										mb={"1rem"}
+									>
+										Aun no hay fotos
+									</Text>
+									<Box
+										p={"30px"}
+										key={`slide-${sid}`}
 										boxSize="full"
-										objectFit="cover"
-										cursor={"pointer"}
-									/>
+										shadow="md"
+										flex="none"
+									>
+										<Image
+											src={slide.nombre}
+											boxShadow={"dark-lg"}
+											alt="carousel image"
+											boxSize="full"
+											objectFit="cover"
+											cursor={"pointer"}
+										/>
+									</Box>
 								</Box>
 							);
 						})}
@@ -129,12 +139,15 @@ export default function GaleriaFotos() {
 							);
 						})}
 					</Flex>
+
 					<Text {...arrowStyles} left="0" onClick={prevSlide}>
 						&#10094;
 					</Text>
+
 					<Text {...arrowStyles} right="0" onClick={nextSlide}>
 						&#10095;
 					</Text>
+
 					<HStack justify="center" pos="absolute" bottom="8px" w="full">
 						{Array.from({
 							length: slidesCount,
