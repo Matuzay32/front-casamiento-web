@@ -80,7 +80,7 @@ export default function GaleriaFotos() {
 									</Text>
 									<Box
 										p={"30px"}
-										key={`slide-${sid}`}
+										key={`d-${sid}`}
 										boxSize="full"
 										shadow="md"
 										flex="none"
