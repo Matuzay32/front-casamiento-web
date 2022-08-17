@@ -20,3 +20,8 @@ export const guardarNombreImagenes = async (datos) => {
 
 	return data;
 };
+
+export const muestraTodasLasFotosGaleria = async () => {
+	const res = await fetch("http://localhost:4000/galeria");
+	return res.json();
+};

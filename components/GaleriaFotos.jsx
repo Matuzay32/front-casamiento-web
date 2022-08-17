@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Flex, Box, HStack, Text, Image } from "@chakra-ui/react";
+import { muestraTodasLasFotosGaleria } from "../constantes/galeria";
 
 export default function GaleriaFotos() {
 	const arrowStyles = {
@@ -20,26 +21,38 @@ export default function GaleriaFotos() {
 			bg: "black",
 		},
 	};
-	const slides = [
+	const [slides, setSlides] = useState([
 		{
-			img: "images/1.jpeg",
+			nombre: "images/1.jpeg",
 		},
 		{
-			img: "images/2.jpeg",
+			nombre: "images/2.jpeg",
 		},
 		{
-			img: "images/3.jpeg",
+			nombre: "images/3.jpeg",
 		},
 		{
-			img: "images/4.jpeg",
+			nombre: "images/4.jpeg",
 		},
 		{
-			img: "images/5.jpeg",
+			nombre: "images/5.jpeg",
 		},
 		{
-			img: "images/6.jpeg",
+			nombre: "images/6.jpeg",
 		},
-	];
+	]);
+
+	useEffect(() => {
+		muestraTodasLasFotosGaleria().then((res) => {
+			if (res.at(-1) > 0) {
+				const [{ imagenes }] = res;
+				setSlides(imagenes);
+			}
+		});
+		console.log(slides, "estado fotos de prueba");
+		return () => {};
+	}, []);
+
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const slidesCount = slides.length;
 
@@ -71,7 +84,7 @@ export default function GaleriaFotos() {
 		>
 			<Flex w="full" overflow="visible" pos="relative">
 				<Flex h="auto" w="full" {...carouselStyle}>
-					{slides.map((slide, sid) => (
+					{slides?.map((slide, sid) => (
 						<Box
 							p={"30px"}
 							key={`slide-${sid}`}
@@ -94,7 +107,7 @@ export default function GaleriaFotos() {
 								{sid + 1} / {slidesCount}
 							</Text>
 							<Image
-								src={slide.img}
+								src={`http://localhost:4000/galeria/uploads/${slide.nombre}`}
 								boxShadow={"dark-lg"}
 								alt="carousel image"
 								boxSize="full"
