@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Flex, Box, HStack, Text, Heading, Image } from "@chakra-ui/react";
 import { muestraTodasLasFotosGaleria } from "../constantes/galeria";
 
@@ -48,9 +48,8 @@ export default function GaleriaFotos() {
 		muestraTodasLasFotosGaleria().then((res) => {
 			setSlides(res[0]?.imagenes);
 		});
-		console.log(slides, "estado fotos de prueba");
 		return () => {};
-	}, []);
+	}, [slides]);
 
 	return (
 		<Flex
