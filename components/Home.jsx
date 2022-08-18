@@ -109,7 +109,7 @@ export default function Home() {
 				setFotoCentral(`http://localhost:4000/fotoCentral/uploads/${nombre}`);
 			} else {
 				console.log("no hay imagen");
-				setFotoCentral(`images/default.jpg`);
+				setFotoCentral(`images/3.jpeg`);
 			}
 		});
 	}, [fotoCentral]);
@@ -119,10 +119,10 @@ export default function Home() {
 			<Box
 				width={{ base: "full", sm: "full", lg: "full" }}
 				margin={"auto"}
-				height={"100vh"}
+				height={"900px"}
 				overflow={"auto"}
-				backgroundPosition={"50% 50%"}
-				backgroundAttachment={"fixed"}
+				backgroundPosition={"50% 0%"}
+				backgroundAttachment={"Fixed"}
 				backgroundSize={"cover"}
 				clipPath={
 					"polygon(50% 0%, 100% 0, 100% 35%, 100% 100%, 80% 90%, 50% 100%, 20% 90%, 0 100%, 0% 35%,0% 35%,  0 0)"
