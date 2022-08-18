@@ -163,7 +163,7 @@ export default function Home() {
 							>
 								<Heading
 									fontWeight={500}
-									fontSize={{ base: "30px", sm: "30px", xl: "60px" }}
+									fontSize={{ base: "45px", sm: "60px", xl: "60px" }}
 									color={"white"}
 								>
 									Maru
@@ -178,13 +178,13 @@ export default function Home() {
 									width="60px"
 									height="60px"
 									lineHeight="60px"
-									fontSize={{ base: "30px", sm: "30px", xl: "60px" }}
+									fontSize={{ base: "60px", sm: "60px", xl: "60px" }}
 								>
 									&
 								</Heading>
 								<Heading
 									fontWeight={500}
-									fontSize={{ base: "30px", sm: "30px", xl: "60px" }}
+									fontSize={{ base: "45px", sm: "60px", xl: "60px" }}
 									color={"white"}
 								>
 									Lucho
