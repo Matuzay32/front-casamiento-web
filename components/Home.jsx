@@ -22,10 +22,12 @@ import Card from "./Card";
 import SectionGaleriaFotos from "./SectionGaleriaFotos";
 import PillPity from "pill-pity";
 import { fechasHoras } from "../constantes/fecha";
+import { obtenerFotoCentralDesdeLaDb } from "../constantes/fotoCentral";
 
 export default function Home() {
 	const [hora, setHora] = useState("");
 	const [targetas, setTargetas] = useState();
+	const [fotoCentral, setFotoCentral] = useState("images/fotoCentral.jpeg");
 	const patterFill = useColorModeValue("100", "brand.300");
 
 	useEffect(() => {
@@ -99,6 +101,19 @@ export default function Home() {
 		return () => {};
 	}, [hora]);
 
+	useEffect(() => {
+		console.log(fotoCentral, "esta es mi foto central desde useEffect");
+		obtenerFotoCentralDesdeLaDb().then(({ nombre }) => {
+			if (nombre) {
+				console.log(nombre);
+				setFotoCentral(`http://localhost:4000/fotoCentral/uploads/${nombre}`);
+			} else {
+				console.log("no hay imagen");
+				setFotoCentral(`images/3.jpeg`);
+			}
+		});
+	}, [fotoCentral]);
+
 	return (
 		<>
 			<Box
@@ -108,7 +123,7 @@ export default function Home() {
 				clipPath={
 					"polygon(50% 0%, 100% 0, 100% 35%, 100% 100%, 80% 90%, 50% 100%, 20% 90%, 0 100%, 0% 35%,0% 35%,  0 0)"
 				}
-				backgroundImage={"url('images/fotoCentral.jpeg')"}
+				backgroundImage={`url(${fotoCentral})`}
 				backgroundSize={"cover"}
 				backgroundPosition="center"
 				backgroundRepeat="no-repeat"

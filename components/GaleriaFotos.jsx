@@ -66,7 +66,7 @@ export default function GaleriaFotos() {
 					<Flex h="auto" w="full" {...carouselStyle}>
 						{defaultImages?.map((slide, sid) => {
 							return (
-								<Box>
+								<Box key={`d-${sid}`}>
 									<Text
 										pos={"absolute"}
 										fontSize={"2xl"}
@@ -78,13 +78,7 @@ export default function GaleriaFotos() {
 									>
 										Aun no hay fotos
 									</Text>
-									<Box
-										p={"30px"}
-										key={`d-${sid}`}
-										boxSize="full"
-										shadow="md"
-										flex="none"
-									>
+									<Box p={"30px"} boxSize="full" shadow="md" flex="none">
 										<Image
 											src={slide.nombre}
 											boxShadow={"dark-lg"}
