@@ -38,6 +38,10 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
+import {
+	subirFotoCentral,
+	subirFotoCentralDb,
+} from "../constantes/fotoCentral";
 
 export default function CambiarFotoCentral() {
 	const patterFill = useColorModeValue("white", "brand.300");
@@ -57,9 +61,10 @@ export default function CambiarFotoCentral() {
 		console.log(files, "files");
 
 		//esto va a cargar las fotos en la carpeta uploads y devolver los nombres
-		const nombreImagen = await subirFotoCentralDb(formData);
+		const nombreImagen = await subirFotoCentral(formData);
 		console.log(nombreImagen, "cargada en la carpeta uploads");
-		// const imagenesGaleria = { images: namesPhotos };
+		const imagenCargadaDb = await subirFotoCentralDb(nombreImagen);
+		console.log(imagenCargadaDb, " esta es la imagen que se cargo en la db");
 	};
 
 	const handleSumbit = (event) => {
@@ -69,7 +74,7 @@ export default function CambiarFotoCentral() {
 
 		fetchPost();
 
-		push("/");
+		// push("/");
 	};
 
 	return (
