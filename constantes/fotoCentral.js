@@ -7,5 +7,6 @@ export const obtenerFotoCentralDesdeLaDb = async () => {
 //CON ESTO SE MODIFICA LA POSICION DE LA FOTO CENTRAL EN EL EJE Y
 export const posicionFotoCentralEnY = 1;
 
-//Esta es la foto central por defecto
+//ESTA ES LA FOTO CENTRAL POR DEFECTO EN CASO DE QUE NO SE QUIERA CAMBIAR
+
 export const fotoPorDefecto = "images/fotoCentral.jpeg";
