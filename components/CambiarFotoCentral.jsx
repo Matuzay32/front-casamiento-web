@@ -57,11 +57,9 @@ export default function CambiarFotoCentral() {
 		console.log(files, "files");
 
 		//esto va a cargar las fotos en la carpeta uploads y devolver los nombres
-		// const namesPhotos = await postAllPhotos(formData);
+		const nombreImagen = await subirFotoCentralDb(formData);
+		console.log(nombreImagen, "cargada en la carpeta uploads");
 		// const imagenesGaleria = { images: namesPhotos };
-
-		//esta es la funcion que va hacer el metodo post a la base de imagenes que va ir a la galeria
-		// createImagenesGaleriaFetch(imagenesGaleria);
 	};
 
 	const handleSumbit = (event) => {
@@ -158,7 +156,6 @@ export default function CambiarFotoCentral() {
 								_placeholder={{
 									color: "gray.500",
 								}}
-								multiple
 							/>
 
 							{/* </form> */}
