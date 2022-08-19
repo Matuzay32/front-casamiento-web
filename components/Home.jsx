@@ -22,7 +22,10 @@ import Card from "./Card";
 import SectionGaleriaFotos from "./SectionGaleriaFotos";
 import PillPity from "pill-pity";
 import { fechasHoras } from "../constantes/fecha";
-import { obtenerFotoCentralDesdeLaDb } from "../constantes/fotoCentral";
+import {
+	obtenerFotoCentralDesdeLaDb,
+	posicionFotoCentralEnY,
+} from "../constantes/fotoCentral";
 
 export default function Home() {
 	const [hora, setHora] = useState("");
@@ -121,7 +124,7 @@ export default function Home() {
 				margin={"auto"}
 				height={"900px"}
 				overflow={"auto"}
-				backgroundPosition={"50% 0%"}
+				backgroundPosition={`50% ${posicionFotoCentralEnY}%`}
 				backgroundAttachment={"Fixed"}
 				backgroundSize={"cover"}
 				clipPath={
