@@ -82,7 +82,7 @@ export default function CambiarFotoCentral() {
 
 		fetchPost();
 
-		// push("/");
+		push("/");
 	};
 
 	return (

@@ -39,7 +39,7 @@ export default function Home() {
 		fechasHoras().then(({ hora }) => setHora(hora));
 
 		if (hora) {
-			console.log(hora, "esta es mi hota");
+			//console.log(hora, "esta es mi hota");
 		}
 		setTargetas([
 			{
@@ -106,14 +106,14 @@ export default function Home() {
 	}, [hora]);
 
 	useEffect(() => {
-		console.log(fotoCentral, "esta es mi foto central desde useEffect");
+		//console.log(fotoCentral, "esta es mi foto central desde useEffect");
 		obtenerFotoCentralDesdeLaDb().then(({ nombre }) => {
 			if (nombre) {
-				console.log(nombre);
+				//console.log(nombre);
 				posicionFotoCentralEnY().then((x) => setPosY(x));
 				setFotoCentral(`http://localhost:4000/fotoCentral/uploads/${nombre}`);
 			} else {
-				console.log("no hay imagen");
+				//console.log("no hay imagen");
 				setFotoCentral(`images/3.jpeg`);
 			}
 		});
