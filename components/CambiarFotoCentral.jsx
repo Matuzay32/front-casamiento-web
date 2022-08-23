@@ -58,13 +58,21 @@ export default function CambiarFotoCentral() {
 		const formData = new FormData(form);
 		console.log(formData, "probando");
 		const files = formData.get("file");
-		console.log(files, "files");
+		const pos = formData.get("pos");
+		console.log(pos, "pos");
 
 		//esto va a cargar las fotos en la carpeta uploads y devolver los nombres
 		const nombreImagen = await subirFotoCentral(formData);
+		const subirADb = {
+			nombre: nombreImagen.nombre,
+			posicionFotoCentralEnY: pos,
+		};
 		console.log(nombreImagen, "cargada en la carpeta uploads");
-		const imagenCargadaDb = await subirFotoCentralDb(nombreImagen);
+
+		const imagenCargadaDb = await subirFotoCentralDb(subirADb);
 		console.log(imagenCargadaDb, " esta es la imagen que se cargo en la db");
+
+		console.log(subirADb);
 	};
 
 	const handleSumbit = (event) => {
@@ -137,6 +145,30 @@ export default function CambiarFotoCentral() {
 					<Box as={"form"} mt={10} ref={refForm}>
 						<Stack spacing={4}>
 							{/* <form ref={refForm}> */}
+							<FormLabel
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								posicion vertical de la imagen
+							</FormLabel>
+
+							<Input
+								required
+								type={"number"}
+								name="pos"
+								placeholder="posicion vertical"
+								bg={"gray.100"}
+								border={0}
+								color={"gray.500"}
+								_placeholder={{
+									color: "gray.500",
+								}}
+							/>
 
 							<FormLabel
 								fontSize={"md"}
