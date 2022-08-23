@@ -29,8 +29,14 @@ export const subirFotoCentral = async (data) => {
 	return await res.json();
 };
 
+export const posicionFotoCentralEnY = async () => {
+	const res = await fetch(`http://localhost:4000/fotoCentral`);
+	const datos = await res.json();
+	return datos.posicionFotoCentralEnY;
+};
+
 //CON ESTO SE MODIFICA LA POSICION DE LA FOTO CENTRAL EN EL EJE Y
-export const posicionFotoCentralEnY = 1;
+// export const posicionFotoCentralEnY = 50;
 
 //ESTA ES LA FOTO CENTRAL POR DEFECTO EN CASO DE QUE NO SE QUIERA CAMBIAR
 

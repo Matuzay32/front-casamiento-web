@@ -32,6 +32,7 @@ export default function Home() {
 	const [hora, setHora] = useState("");
 	const [targetas, setTargetas] = useState();
 	const [fotoCentral, setFotoCentral] = useState("images/fotoCentral.jpeg");
+	const [posY, setPosY] = useState();
 	const patterFill = useColorModeValue("100", "brand.300");
 
 	useEffect(() => {
@@ -109,6 +110,7 @@ export default function Home() {
 		obtenerFotoCentralDesdeLaDb().then(({ nombre }) => {
 			if (nombre) {
 				console.log(nombre);
+				posicionFotoCentralEnY().then((x) => setPosY(x));
 				setFotoCentral(`http://localhost:4000/fotoCentral/uploads/${nombre}`);
 			} else {
 				console.log("no hay imagen");
@@ -124,7 +126,7 @@ export default function Home() {
 				margin={"auto"}
 				height={"900px"}
 				overflow={"auto"}
-				backgroundPosition={`50% ${posicionFotoCentralEnY}%`}
+				backgroundPosition={`50% ${posY}%`}
 				backgroundAttachment={"Fixed"}
 				backgroundSize={"cover"}
 				clipPath={
