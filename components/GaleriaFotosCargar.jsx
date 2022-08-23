@@ -53,7 +53,7 @@ export default function GaleriaFotosCargar() {
 		const { current: form } = refForm;
 		const formData = new FormData(form);
 		const namesPhotos = await postAllPhotos(formData);
-		const carConImagenes = {  imagenes: namesPhotos };
+		const carConImagenes = { imagenes: namesPhotos };
 		guardarNombreImagenes(carConImagenes);
 	};
 
@@ -64,7 +64,7 @@ export default function GaleriaFotosCargar() {
 
 		fetchPost();
 
-		// push("/");
+		push("/");
 	};
 
 	return (
