@@ -105,8 +105,6 @@ export default function IngresarComponent() {
 			bgColor={300}
 			as={Box}
 		>
-			{/* <PopUpModal modalContent={modalContent}></PopUpModal> */}
-
 			<Container
 				as={SimpleGrid}
 				maxW={"7xl"}
@@ -140,13 +138,7 @@ export default function IngresarComponent() {
 					<Box as={"form"} mt={10} ref={refForm}>
 						<Stack spacing={4}>
 							{/* <form ref={refForm}> */}
-							<FormLabel>
-								Username{" "}
-								<Text color={"gray.500"}>
-									((longitud máxima 16 al menos un número y una letra
-									mayúscula):
-								</Text>
-							</FormLabel>
+							<FormLabel>Username </FormLabel>
 							<Input
 								required
 								placeholder="Username"
