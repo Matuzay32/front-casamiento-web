@@ -22,6 +22,14 @@ export default function Reloj() {
 	const interval = useRef();
 	const [tokenRol, setTokenRol] = useState();
 
+	
+	useEffect(() => {
+		obtenerTokenYRol().then((x) => {
+			setTokenRol(x);
+		});
+		return () => {};
+	}, []);
+
 	//"2022-11-11"
 	const startTimer = () => {
 		if (fecha) {
@@ -58,12 +66,6 @@ export default function Reloj() {
 		};
 	}, [fecha]);
 
-	useEffect(() => {
-		obtenerTokenYRol().then((x) => {
-			setTokenRol(x);
-		});
-		return () => {};
-	}, []);
 	return (
 		<Box
 			w={"100%"}
