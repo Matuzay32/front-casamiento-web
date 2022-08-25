@@ -1,9 +1,9 @@
 import { React, useEffect, useState } from "react";
+import { obtenerTokenYRol } from "../constantes/tokenLogica";
+import swal from "sweetalert";
 import { Box, Text } from "@chakra-ui/react";
 import OpcionesDelBackOffice from "../components/OpcionesDelBackOffice";
 import HeroBackOffice from "../components/HeroBackOffice";
-import { obtenerTokenYRol } from "../constantes/tokenLogica";
-import swal from "sweetalert";
 
 export default function backOffice() {
 	const [tokenRol, setTokenRol] = useState();
