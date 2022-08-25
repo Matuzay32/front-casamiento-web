@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import PanelUsersBackOffice from "./PanelUsersBackOffice";
 import { fechasHoras } from "../constantes/fecha";
+import { obtenerTokenYRol } from "../constantes/tokenLogica";
 
 export default function Reloj() {
 	const [timerDays, setTimerDays] = useState("00");
@@ -19,6 +20,8 @@ export default function Reloj() {
 	const [timerSeconds, setTimerSeconds] = useState("00");
 	const [fecha, setFecha] = useState();
 	const interval = useRef();
+	const [tokenRol, setTokenRol] = useState();
+
 	//"2022-11-11"
 	const startTimer = () => {
 		if (fecha) {
@@ -55,6 +58,12 @@ export default function Reloj() {
 		};
 	}, [fecha]);
 
+	useEffect(() => {
+		obtenerTokenYRol().then((x) => {
+			setTokenRol(x);
+		});
+		return () => {};
+	}, []);
 	return (
 		<Box
 			w={"100%"}
@@ -63,7 +72,9 @@ export default function Reloj() {
 			alignItems={"center"}
 			flexFlow={"column"}
 		>
-			<PanelUsersBackOffice />
+			{tokenRol && tokenRol.rol === "ADMIN" && tokenRol.token && (
+				<PanelUsersBackOffice />
+			)}
 
 			<Heading
 				fontSize={"50px"}

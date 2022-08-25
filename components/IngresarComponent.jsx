@@ -29,11 +29,10 @@ import {
 } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
-// import { fetchLoginPagePost } from "../constantes/constantes.js";
 import { FiCamera, FiSave } from "react-icons/fi";
 import { AiFillIdcard } from "react-icons/ai";
 import { FaCarSide } from "react-icons/fa";
-// import PopUpModal from "./PopUpModal";
+import swal from "sweetalert";
 
 import {
 	FaInstagram,
@@ -42,6 +41,7 @@ import {
 	FaShoppingCart,
 } from "react-icons/fa";
 import { PillPity } from "pill-pity";
+import { ingresarUsuario } from "../constantes/usuario";
 
 export default function IngresarComponent() {
 	const patterFill = useColorModeValue("white", "brand.300");
@@ -56,15 +56,29 @@ export default function IngresarComponent() {
 		// setModalContent("");
 		const { current: form } = refForm;
 		const formData = new FormData(form);
-		// fetchLoginPagePost(user).then((x) => {
-		// 	if (x.token) {
-		// 		setModalContent(x.message);
-		// 		sessionStorage.setItem("token", JSON.stringify(x.token));
-		// 		push("/");
-		// 	} else {
-		// 		setModalContent(x.error);
-		// 	}
-		// });
+		ingresarUsuario(user).then((x) => {
+			if (x.token) {
+				console.log(x, "res");
+				sessionStorage.setItem("token", JSON.stringify(x));
+				swal({
+					title: "INFO",
+					text: "Usted a ingresado con exito",
+					icon: "success",
+				});
+				if (x.rol === "ADMIN") {
+					push("/backOffice");
+				} else {
+					push("/");
+				}
+			} else {
+				swal({
+					title: "Error",
+					text: "El usuario contraseña no existe",
+					icon: "error",
+				});
+			}
+		});
+		console.log(user);
 	};
 	const handleSumbit = (event) => {
 		const { current: form } = refForm;

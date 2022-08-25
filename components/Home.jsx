@@ -27,6 +27,7 @@ import {
 	obtenerFotoCentralDesdeLaDb,
 	posicionFotoCentralEnY,
 } from "../constantes/fotoCentral";
+import { obtenerTokenYRol } from "../constantes/tokenLogica";
 
 export default function Home() {
 	const [hora, setHora] = useState("");
