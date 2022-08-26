@@ -43,13 +43,13 @@ export default function IngresarComponent() {
 	const [modalContent, setModalContent] = useState("");
 
 	const fetchPost = async (user) => {
-		console.log(user);
+		//console.log(user);
 		// setModalContent("");
 		const { current: form } = refForm;
 		const formData = new FormData(form);
 		ingresarUsuario(user).then((x) => {
 			if (x.token) {
-				console.log(x, "res");
+				//console.log(x, "res");
 				sessionStorage.setItem("token", JSON.stringify(x));
 				swal({
 					title: "INFO",
@@ -69,7 +69,7 @@ export default function IngresarComponent() {
 				});
 			}
 		});
-		console.log(user);
+		//console.log(user);
 	};
 	const handleSumbit = (event) => {
 		const { current: form } = refForm;

@@ -22,7 +22,6 @@ export default function Reloj() {
 	const interval = useRef();
 	const [tokenRol, setTokenRol] = useState();
 
-	
 	useEffect(() => {
 		obtenerTokenYRol().then((x) => {
 			setTokenRol(x);
@@ -33,7 +32,7 @@ export default function Reloj() {
 	//"2022-11-11"
 	const startTimer = () => {
 		if (fecha) {
-			//console.log(fecha, "probando");
+			////console.log(fecha, "probando");
 			const countDownDate = new Date(fecha).getTime();
 			interval = setInterval(() => {
 				const now = new Date().getTime();

@@ -44,7 +44,7 @@ export default function GaleriaFotosCargar() {
 	const patterFill = useColorModeValue("white", "brand.300");
 
 	const router = useRouter();
-	// console.log(router);
+	// //console.log(router);
 	const { push } = router;
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
@@ -62,7 +62,7 @@ export default function GaleriaFotosCargar() {
 		// event.preventDefault()
 		const formData = new FormData(form);
 		const files = formData.get("file");
-		console.log(files);
+		//console.log(files);
 		if (files.name) {
 			fetchPost();
 			swal({
