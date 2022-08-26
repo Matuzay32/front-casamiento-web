@@ -25,7 +25,7 @@ import {
 
 const LinkItems = [
 	{ name: "Ingresar ", icon: BiLogIn, href: "/ingresar" },
-	{ name: "cerrar sesión", icon: BiLogOut, href: "" },
+	{ name: "cerrar sesión", icon: BiLogOut, href: "/cerrar" },
 	{ name: "Back office", icon: GiOfficeChair, href: "/backOffice" },
 ];
 
