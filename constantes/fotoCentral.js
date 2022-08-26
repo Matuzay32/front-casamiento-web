@@ -1,4 +1,5 @@
 //MUESTRA LAS IMAGENES QUE ESTAN CARGADAS EN LA DB
+import { obtenerTokenYRol } from "./tokenLogica";
 export const obtenerFotoCentralDesdeLaDb = async () => {
 	const res = await fetch("http://localhost:4000/fotoCentral");
 	return await res.json();
@@ -6,11 +7,14 @@ export const obtenerFotoCentralDesdeLaDb = async () => {
 
 //GUARDA EL NOMBRE LA IMAGEN EN LA DB DE FOTOSCENTRALES
 export const subirFotoCentralDb = async (datos) => {
+	const respuesta = await obtenerTokenYRol();
+
 	const res = await fetch(`http://localhost:4000/fotoCentral`, {
 		method: "POST",
 		headers: {
 			Accept: "application/json",
 			"Content-Type": "application/json",
+			token: respuesta?.token,
 		},
 		body: JSON.stringify(datos),
 	});
@@ -29,7 +33,6 @@ export const subirFotoCentral = async (data) => {
 	return await res.json();
 };
 //CON ESTO SE MODIFICA LA POSICION DE LA FOTO CENTRAL EN EL EJE Y
-
 export const posicionFotoCentralEnY = async () => {
 	const res = await fetch(`http://localhost:4000/fotoCentral`);
 	const datos = await res.json();
