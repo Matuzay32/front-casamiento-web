@@ -29,17 +29,8 @@ import {
 } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { FiCamera, FiSave } from "react-icons/fi";
-import { AiFillIdcard } from "react-icons/ai";
-import { FaCarSide } from "react-icons/fa";
 import swal from "sweetalert";
 
-import {
-	FaInstagram,
-	FaTwitter,
-	FaYoutube,
-	FaShoppingCart,
-} from "react-icons/fa";
 import { PillPity } from "pill-pity";
 import { ingresarUsuario } from "../constantes/usuario";
 
