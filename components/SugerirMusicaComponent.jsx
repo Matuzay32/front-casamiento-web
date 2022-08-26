@@ -72,7 +72,7 @@ export default function SugerirMusicaComponent() {
 			fetchPost(cancion);
 			swal({
 				title: "INFO",
-				text: "Gracias por ayudarnos a hacer la play list",
+				text: "Gracias por ayudarnos a hacer la playlist",
 				icon: "success",
 			});
 			push("/");

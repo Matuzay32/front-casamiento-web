@@ -39,6 +39,7 @@ import {
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
 import { creandoInvitado } from "../constantes/invitado";
+import swal from "sweetalert";
 
 export default function ConfirmarAsistenciaComponent() {
 	const router = useRouter();
@@ -72,12 +73,18 @@ export default function ConfirmarAsistenciaComponent() {
 			};
 
 			fetchPost(persona);
+			swal({
+				title: "INFO",
+				text: "Gracias por confirmar asistencia",
+				icon: "success",
+			});
 			push("/");
 		} else {
-			setModalContent("Missing dates");
-			setTimeout(() => {
-				setModalContent("");
-			}, 1000);
+			swal({
+				title: "INFO",
+				text: "Tiene que ingresar todos los datos para confirmar la asistencia",
+				icon: "warning",
+			});
 		}
 	};
 
