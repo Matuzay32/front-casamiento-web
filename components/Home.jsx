@@ -25,6 +25,7 @@ import PillPity from "pill-pity";
 import { fechasHoras } from "../constantes/fecha";
 import {
 	obtenerFotoCentralDesdeLaDb,
+	fotoPorDefecto,
 	posicionFotoCentralEnY,
 } from "../constantes/fotoCentral";
 import { obtenerTokenYRol } from "../constantes/tokenLogica";
@@ -115,7 +116,7 @@ export default function Home() {
 				setFotoCentral(`http://localhost:4000/fotoCentral/uploads/${nombre}`);
 			} else {
 				//console.log("no hay imagen");
-				setFotoCentral(`images/3.jpeg`);
+				setFotoCentral(fotoPorDefecto);
 			}
 		});
 	}, [fotoCentral]);

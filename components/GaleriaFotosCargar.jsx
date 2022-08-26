@@ -61,10 +61,23 @@ export default function GaleriaFotosCargar() {
 		const { current: form } = refForm;
 		// event.preventDefault()
 		const formData = new FormData(form);
-
-		fetchPost();
-
-		push("/");
+		const files = formData.get("file");
+		console.log(files);
+		if (files.name) {
+			fetchPost();
+			swal({
+				title: "INFO",
+				text: "Fotos agregadas a la galeria correctamente",
+				icon: "success",
+			});
+			push("/");
+		} else {
+			swal({
+				title: "INFO",
+				text: "Tiene que agregar al menos una foto a la galeria",
+				icon: "warning",
+			});
+		}
 	};
 
 	return (

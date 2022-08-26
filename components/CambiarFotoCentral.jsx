@@ -42,12 +42,13 @@ import {
 	subirFotoCentral,
 	subirFotoCentralDb,
 } from "../constantes/fotoCentral";
+import swal from "sweetalert";
 
 export default function CambiarFotoCentral() {
 	const patterFill = useColorModeValue("white", "brand.300");
 
 	const router = useRouter();
-	// console.log(router);
+	// //console.log(router);
 	const { push } = router;
 	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
@@ -56,10 +57,10 @@ export default function CambiarFotoCentral() {
 		setModalContent("");
 		const { current: form } = refForm;
 		const formData = new FormData(form);
-		console.log(formData, "probando");
+		//console.log(formData, "probando");
 		const files = formData.get("file");
 		const pos = formData.get("pos");
-		console.log(pos, "pos");
+		//console.log(pos, "pos");
 
 		//esto va a cargar las fotos en la carpeta uploads y devolver los nombres
 		const nombreImagen = await subirFotoCentral(formData);
@@ -67,22 +68,34 @@ export default function CambiarFotoCentral() {
 			nombre: nombreImagen.nombre,
 			posicionFotoCentralEnY: pos,
 		};
-		console.log(nombreImagen, "cargada en la carpeta uploads");
+		//console.log(nombreImagen, "cargada en la carpeta uploads");
 
 		const imagenCargadaDb = await subirFotoCentralDb(subirADb);
-		console.log(imagenCargadaDb, " esta es la imagen que se cargo en la db");
+		//console.log(imagenCargadaDb, " esta es la imagen que se cargo en la db");
 
-		console.log(subirADb);
+		//console.log(subirADb);
 	};
 
 	const handleSumbit = (event) => {
 		const { current: form } = refForm;
 		// event.preventDefault()
 		const formData = new FormData(form);
-
-		fetchPost();
-
-		push("/");
+		const pos = formData.get("pos");
+		if (pos) {
+			fetchPost();
+			swal({
+				title: "INFO",
+				text: "Foto central cambiada correctamente",
+				icon: "warning",
+			});
+			push("/");
+		} else {
+			swal({
+				title: "INFO",
+				text: "Tiene que ingresar todos los datos para poder cambiar la foto central",
+				icon: "warning",
+			});
+		}
 	};
 
 	return (
