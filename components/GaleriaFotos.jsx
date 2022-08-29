@@ -44,6 +44,10 @@ export default function GaleriaFotos() {
 		ml: `-${currentSlide * 100}%`,
 	};
 
+	const pointsMov = {
+		transition: "all 1.5s",
+		ml: `-${currentSlide * 1}%`,
+	};
 	useEffect(() => {
 		muestraTodasLasFotosGaleria().then((res) => {
 			setSlides(res[0]?.imagenes);
@@ -141,28 +145,30 @@ export default function GaleriaFotos() {
 						&#10095;
 					</Text>
 
-					<HStack justify="center" pos="absolute" bottom="8px" w="full">
-						{Array.from({
-							length: slidesCount,
-						}).map((_, slide) => (
-							<Box
-								key={`dots-${slide}`}
-								cursor="pointer"
-								boxSize={["7px", null, "15px"]}
-								m="0 2px"
-								bg={
-									currentSlide === slide ? "blackAlpha.800" : "blackAlpha.500"
-								}
-								rounded="50%"
-								display="inline-block"
-								transition="background-color 0.6s ease"
-								_hover={{
-									bg: "blackAlpha.800",
-								}}
-								onClick={() => setSlide(slide)}
-							></Box>
-						))}
-					</HStack>
+					<Box justify="center" pos="absolute" bottom="-3px" w="full">
+						<Box h="25px" {...pointsMov}>
+							{Array.from({
+								length: slidesCount,
+							}).map((_, slide) => (
+								<Box
+									key={`dots-${slide}`}
+									cursor="pointer"
+									boxSize={["7px", null, "15px"]}
+									m="0 2px"
+									bg={
+										currentSlide === slide ? "blackAlpha.800" : "blackAlpha.500"
+									}
+									rounded="50%"
+									display="inline-block"
+									transition="background-color 0.6s ease"
+									_hover={{
+										bg: "blackAlpha.800",
+									}}
+									onClick={() => setSlide(slide)}
+								></Box>
+							))}
+						</Box>
+					</Box>
 				</Flex>
 			)}
 		</Flex>
