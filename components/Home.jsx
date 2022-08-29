@@ -129,7 +129,7 @@ export default function Home() {
 				height={"900px"}
 				overflow={"auto"}
 				backgroundPosition={`50% ${posY}%`}
-				backgroundAttachment={"Fixed"}
+				backgroundAttachment={"fixed"}
 				backgroundSize={"cover"}
 				clipPath={
 					"polygon(50% 0%, 100% 0, 100% 35%, 100% 100%, 80% 90%, 50% 100%, 20% 90%, 0 100%, 0% 35%,0% 35%,  0 0)"
