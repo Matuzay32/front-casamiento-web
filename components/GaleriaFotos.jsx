@@ -46,7 +46,11 @@ export default function GaleriaFotos() {
 
 	const pointsMov = {
 		transition: "all 1.5s",
-		ml: `-${currentSlide * 1}%`,
+		ml: {
+			base: `-${currentSlide * 5}%`,
+			lg: `-${currentSlide * 10}%`,
+			md: `-${currentSlide * 10}%`,
+		},
 	};
 	useEffect(() => {
 		muestraTodasLasFotosGaleria().then((res) => {
@@ -145,8 +149,19 @@ export default function GaleriaFotos() {
 						&#10095;
 					</Text>
 
-					<Box justify="center" pos="absolute" bottom="-3px" w="full">
-						<Box h="25px" {...pointsMov}>
+					<Box
+						justify="center"
+						pos="absolute"
+						bottom="-3px"
+						w="full"
+						overflow={"hidden"}
+					>
+						<Box
+							h="25px"
+							display={"inline-flex"}
+							{...pointsMov}
+							overflow={"hidden"}
+						>
 							{Array.from({
 								length: slidesCount,
 							}).map((_, slide) => (
@@ -154,7 +169,7 @@ export default function GaleriaFotos() {
 									key={`dots-${slide}`}
 									cursor="pointer"
 									boxSize={["7px", null, "15px"]}
-									m="0 2px"
+									m={{ base: "0 0.8rem", lg: "0 0.8rem", md: '"0 0.8rem"' }}
 									bg={
 										currentSlide === slide ? "blackAlpha.800" : "blackAlpha.500"
 									}
