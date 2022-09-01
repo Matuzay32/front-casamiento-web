@@ -57,7 +57,7 @@ export default function Home() {
 			},
 			{
 				href: "",
-				verBoton: true,
+				verBoton: false,
 				evento: "Ceremonia",
 				botonTexto: "Ubicación",
 				fecha: "11.11.2022",
@@ -69,7 +69,7 @@ export default function Home() {
 			},
 			{
 				href: "",
-				verBoton: true,
+				verBoton: false,
 				evento: "Fiesta",
 				botonTexto: "Ubicacion",
 				fecha: "11.11.2022",

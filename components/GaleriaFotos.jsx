@@ -28,8 +28,11 @@ export default function GaleriaFotos() {
 			nombre: "images/notFound.jpeg",
 		},
 	]);
+
 	const [currentSlide, setCurrentSlide] = useState(0);
+
 	const slidesCount = slides?.length;
+
 	const prevSlide = () => {
 		setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
 	};
@@ -39,6 +42,7 @@ export default function GaleriaFotos() {
 	const setSlide = (slide) => {
 		setCurrentSlide(slide);
 	};
+
 	const carouselStyle = {
 		transition: "all 1.5s",
 		ml: `-${currentSlide * 100}%`,
