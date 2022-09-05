@@ -56,8 +56,8 @@ export default function Home() {
 					"https://images.unsplash.com/photo-1531346618680-ab17d6dcd07c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
 			},
 			{
-				href: "",
-				verBoton: false,
+				href: "https://www.google.it/maps/place/Delegaci%C3%B3n+municipal+Ciudad+Evita/@-34.7290957,-58.5278212,17z/data=!4m5!3m4!1s0x95bccfeb92ba0167:0xe348c4d48676aa10!8m2!3d-34.7301233!4d-58.5254017",
+				verBoton: true,
 				evento: "Ceremonia",
 				botonTexto: "Ubicación",
 				fecha: "11.11.2022",
@@ -68,8 +68,8 @@ export default function Home() {
 				imagen: `https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`,
 			},
 			{
-				href: "",
-				verBoton: false,
+				href: "https://www.google.it/maps/place/El+Yaguar+600,+Cdad.+Evita,+Provincia+de+Buenos+Aires/@-34.7093894,-58.5372966,3a,75y,109.27h,76.87t/data=!3m7!1e1!3m5!1sEoCN1sSCtMPLsjJq6wLglw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DEoCN1sSCtMPLsjJq6wLglw%26cb_client%3Dsearch.gws-prod.gps%26w%3D86%26h%3D86%26yaw%3D190.20149%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m5!3m4!1s0x95bccf48d3256255:0x1afa71e848478ae1!8m2!3d-34.7098394!4d-58.5371974",
+				verBoton: true,
 				evento: "Fiesta",
 				botonTexto: "Ubicacion",
 				fecha: "11.11.2022",
