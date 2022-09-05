@@ -2,7 +2,7 @@ version: "3"
 
 services:
   web:
-    container_name: frontCars
+    container_name: casamiento-front
     restart: always
     build: .
     ports:
