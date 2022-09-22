@@ -34,7 +34,7 @@ export default function ContenidoListaMusica() {
 		});
 
 		return () => {};
-	}, [spotyLink]);
+	}, []);
 
 	return (
 		<>
