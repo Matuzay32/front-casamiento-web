@@ -99,7 +99,7 @@ export default function Home() {
 				botonTexto: "sugerir música",
 				fecha: "11.11.2022",
 				datos:
-					"¿Qué música no puede faltar?. Siéntase libre de sugerir una lista de reproducción ",
+					"¿Qué música no puede faltar?. Siéntase libre de sugerir una lista de reproducción",
 				icon: AiFillSound,
 				imagen:
 					"https://images.unsplash.com/photo-1526142684086-7ebd69df27a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
