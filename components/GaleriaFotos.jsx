@@ -61,7 +61,7 @@ export default function GaleriaFotos() {
 			setSlides(res[0]?.imagenes);
 		});
 		return () => {};
-	}, [slides]);
+	}, []);
 
 	return (
 		<Flex
