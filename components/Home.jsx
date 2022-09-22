@@ -83,10 +83,11 @@ export default function Home() {
 			{
 				href: "#targeta3",
 				verBoton: false,
-				evento: "Codigo de Vestimenta",
+				evento: "¿Que ponerse?",
 				botonTexto: "Ver",
 				fecha: "11.11.2022",
-				datos: `Vestimenta: lindos y cómodos`,
+				datos: `
+				Vengan lindxs y comxdos`,
 				icon: IoIosBowtie,
 				imagen:
 					"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
