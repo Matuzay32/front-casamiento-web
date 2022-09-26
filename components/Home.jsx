@@ -105,7 +105,7 @@ export default function Home() {
 					"https://images.unsplash.com/photo-1526142684086-7ebd69df27a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 			},
 			{
-				href: "/sugerirMusica",
+				href: "/regalo",
 				verBoton: true,
 				evento: "Regalo",
 				botonTexto: "Regalar",
