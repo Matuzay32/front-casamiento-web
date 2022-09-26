@@ -77,8 +77,7 @@ export default function Home() {
 					Lugar: Casa Magno 
 					Horario: hasta lo que dé`,
 				icon: FaWineGlassAlt,
-				imagen:
-					"https://images.unsplash.com/photo-1621866908556-4f0a830707c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+				imagen: "../images/festejo.jpeg",
 			},
 			{
 				href: "#targeta3",
@@ -89,8 +88,7 @@ export default function Home() {
 				datos: `
 				Vengan lindxs y comxdos`,
 				icon: IoIosBowtie,
-				imagen:
-					"https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+				imagen: "../images/vestimenta.jpg",
 			},
 			{
 				href: "/sugerirMusica",
@@ -101,8 +99,7 @@ export default function Home() {
 				datos:
 					"¿Qué música no puede faltar?. Siéntase libre de sugerir una lista de reproducción",
 				icon: AiFillSound,
-				imagen:
-					"https://images.unsplash.com/photo-1526142684086-7ebd69df27a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+				imagen: "../images/spotify.jpg",
 			},
 			{
 				href: "/regalo",
