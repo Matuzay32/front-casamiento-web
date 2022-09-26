@@ -22,7 +22,7 @@ export default function DatosCuenta() {
 		<PillPity
 			position={"relative"}
 			w={"full"}
-			h={"auto"}
+			h={"100vh"}
 			// backgroundSize={"cover"}
 			// backgroundPosition={"25% 50%"}
 			// backgroundImage={
@@ -90,7 +90,7 @@ export default function DatosCuenta() {
 							</Text>
 
 							<Text
-								fontSize={"md"}
+								fontSize={"2xl"}
 								fontWeight={500}
 								color={100}
 								fontFamily={"body"}
@@ -114,7 +114,7 @@ export default function DatosCuenta() {
 							</Text>
 
 							<Text
-								fontSize={"md"}
+								fontSize={"2xl"}
 								fontWeight={500}
 								color={100}
 								fontFamily={"body"}
@@ -138,7 +138,7 @@ export default function DatosCuenta() {
 							</Text>
 
 							<Text
-								fontSize={"md"}
+								fontSize={"2xl"}
 								fontWeight={500}
 								color={100}
 								fontFamily={"body"}
@@ -162,7 +162,7 @@ export default function DatosCuenta() {
 							</Text>
 
 							<Text
-								fontSize={"md"}
+								fontSize={"2xl"}
 								fontWeight={500}
 								color={100}
 								fontFamily={"body"}
@@ -186,7 +186,7 @@ export default function DatosCuenta() {
 							</Text>
 
 							<Text
-								fontSize={"md"}
+								fontSize={"2xl"}
 								fontWeight={500}
 								color={100}
 								fontFamily={"body"}
