@@ -248,7 +248,7 @@ export default function Home() {
 						fontWeight={"bold"}
 						color={useColorModeValue("gray.700", "gray.50")}
 					>
-						Vengan a compartir con nosotros
+						Queremos compartir este momento con ustedes{" "}
 					</Heading>
 				</Box>
 				<Box
