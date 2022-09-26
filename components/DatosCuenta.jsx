@@ -6,84 +6,17 @@ import {
 	Heading,
 	Text,
 	Container,
-	Input,
-	Button,
 	SimpleGrid,
-	Avatar,
-	AvatarGroup,
-	useBreakpointValue,
-	IconProps,
-	Icon,
-	FormLabel,
-	Image,
-	Textarea,
-	Select,
-	useDisclosure,
-	Modal,
-	ModalContent,
-	ModalHeader,
-	ModalBody,
-	ModalFooter,
-	ModalCloseButton,
-	ModalOverlay,
 } from "@chakra-ui/react";
 import { useRef, useState, useEffect } from "react";
-import { FiCamera, FiSave } from "react-icons/fi";
-import { FaCarSide } from "react-icons/fa";
-import {
-	FaInstagram,
-	FaTwitter,
-	FaYoutube,
-	FaShoppingCart,
-} from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PillPity } from "pill-pity";
-import { creandoLinkSpotify } from "../constantes/spotify";
-import swal from "sweetalert";
 
 export default function DatosCuenta() {
 	const patterFill = useColorModeValue("white", "brand.300");
 
 	const router = useRouter();
-	const { push } = router;
-	const [modalContent, setModalContent] = useState("");
 	const refForm = useRef();
-
-	const fetchPost = async (cancion) => {
-		setModalContent("");
-		const { current: form } = refForm;
-
-		//Esto postea la lista de conciones de spotify
-		creandoLinkSpotify(cancion);
-	};
-
-	const handleSumbit = (event) => {
-		const { current: form } = refForm;
-		// event.preventDefault()
-		const formData = new FormData(form);
-		const nombre = formData.get("nombre");
-		const autor = formData.get("autor");
-		const linkCancion = formData.get("linkCancion");
-
-		if (formData && linkCancion) {
-			const cancion = {
-				linkCancion,
-			};
-			fetchPost(cancion);
-			swal({
-				title: "INFO",
-				text: "Gracias por ayudarnos a hacer la playlist",
-				icon: "success",
-			});
-			push("/");
-		} else {
-			swal({
-				title: "INFO",
-				text: "Tiene que ingresar alguna sugerencia musical",
-				icon: "warning",
-			});
-		}
-	};
 
 	return (
 		<PillPity
@@ -136,18 +69,27 @@ export default function DatosCuenta() {
 							lineHeight={1.1}
 							// fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
 						>
-							Música
+							Regalito
 						</Heading>
 						<Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-							Sugerinos que musica te gustaria, puede ser con el link de
-							spotify. Armemos la play list juntos
+							Estos son los datos de la cuenta
 						</Text>
 					</Stack>
-					<Box as={"form"} mt={10} ref={refForm}>
+					<Box mt={10} ref={refForm}>
 						<Stack spacing={4}>
-							{/* <form ref={refForm}> */}
+							<Text
+								fontSize={"3xl"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Banco Santander{" "}
+							</Text>
 
-							<FormLabel
+							<Text
 								fontSize={"md"}
 								fontWeight={500}
 								color={100}
@@ -156,38 +98,116 @@ export default function DatosCuenta() {
 								mb={"1rem"}
 								lineHeight={1.1}
 							>
-								Link de la cancion{" "}
-							</FormLabel>
-							<Input
-								required
-								name="linkCancion"
-								type={"text"}
-								placeholder="Ingrese el link de la cancion puede ser Spotify "
-								bg={"gray.100"}
-								border={0}
-								color={"gray.500"}
-								_placeholder={{
-									color: "gray.500",
-								}}
-							/>
+								Número de cuenta:{" "}
+								<Text
+									fontSize={"md"}
+									fontWeight={500}
+									color={"gray.500"}
+									fontFamily={"body"}
+									width={"100%"}
+									mb={"1rem"}
+									lineHeight={1.1}
+									as={"span"}
+								>
+									Cuentas en Pesos 100-371669/2
+								</Text>
+							</Text>
 
-							{/* </form> */}
-
-							<Button
-								onClick={(e) => handleSumbit(e)}
-								w={"full"}
-								mt={8}
-								bg={useColorModeValue("#151f21", "gray.900")}
-								color={"white"}
-								rounded={"2xl"}
-								_hover={{
-									transform: "translateY(-2px)",
-									boxShadow: "lg",
-									backgroundColor: "#d5b063",
-								}}
+							<Text
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
 							>
-								Sugerir
-							</Button>
+								Número de CBU:{" "}
+								<Text
+									fontSize={"md"}
+									fontWeight={500}
+									color={"gray.500"}
+									fontFamily={"body"}
+									width={"100%"}
+									mb={"1rem"}
+									lineHeight={1.1}
+									as={"span"}
+								>
+									0720100088000037166922
+								</Text>
+							</Text>
+
+							<Text
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Alias:{" "}
+								<Text
+									fontSize={"md"}
+									fontWeight={500}
+									color={"gray.500"}
+									fontFamily={"body"}
+									width={"100%"}
+									mb={"1rem"}
+									lineHeight={1.1}
+									as={"span"}
+								>
+									maru.magno
+								</Text>
+							</Text>
+
+							<Text
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Titular de la cuenta:{" "}
+								<Text
+									fontSize={"md"}
+									fontWeight={500}
+									color={"gray.500"}
+									fontFamily={"body"}
+									width={"100%"}
+									mb={"1rem"}
+									lineHeight={1.1}
+									as={"span"}
+								>
+									Magno Maria
+								</Text>
+							</Text>
+
+							<Text
+								fontSize={"md"}
+								fontWeight={500}
+								color={100}
+								fontFamily={"body"}
+								width={"100%"}
+								mb={"1rem"}
+								lineHeight={1.1}
+							>
+								Documento:{" "}
+								<Text
+									fontSize={"md"}
+									fontWeight={500}
+									color={"gray.500"}
+									fontFamily={"body"}
+									width={"100%"}
+									mb={"1rem"}
+									lineHeight={1.1}
+									as={"span"}
+								>
+									DNI - 30821389
+								</Text>
+							</Text>
 						</Stack>
 					</Box>
 				</Stack>
