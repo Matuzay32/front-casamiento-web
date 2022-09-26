@@ -17,7 +17,7 @@ import Reloj from "./Reloj";
 
 import { FaWineGlassAlt, FaRing } from "react-icons/fa";
 import { IoIosBowtie } from "react-icons/io";
-import { AiFillSound } from "react-icons/ai";
+import { AiFillSound, AiFillGift } from "react-icons/ai";
 import { TbConfetti } from "react-icons/tb";
 import Card from "./Card";
 import SectionGaleriaFotos from "./SectionGaleriaFotos";
@@ -103,6 +103,17 @@ export default function Home() {
 				icon: AiFillSound,
 				imagen:
 					"https://images.unsplash.com/photo-1526142684086-7ebd69df27a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+			},
+			{
+				href: "/sugerirMusica",
+				verBoton: true,
+				evento: "Regalo",
+				botonTexto: "Regalar",
+				fecha: "11.11.2022",
+				datos: "Los mejores regalos vienen del corazon",
+				icon: AiFillGift,
+				imagen:
+					"https://images.unsplash.com/photo-1521478706270-f2e33c203d95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 			},
 		]);
 		return () => {};
