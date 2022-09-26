@@ -110,7 +110,8 @@ export default function Home() {
 				evento: "Regalo",
 				botonTexto: "Regalar",
 				fecha: "11.11.2022",
-				datos: "Los mejores regalos vienen del corazon",
+				datos:
+					"Si queres hacernos un regalo, los $ siempre vienen bien para concretar un viaje...",
 				icon: AiFillGift,
 				imagen:
 					"https://images.unsplash.com/photo-1521478706270-f2e33c203d95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
@@ -248,7 +249,7 @@ export default function Home() {
 						fontWeight={"bold"}
 						color={useColorModeValue("gray.700", "gray.50")}
 					>
-						Queremos compartir este momento con ustedes{" "}
+						¡Queremos compartir este momento con ustedes !
 					</Heading>
 				</Box>
 				<Box

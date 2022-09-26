@@ -71,9 +71,9 @@ export default function DatosCuenta() {
 						>
 							Regalito
 						</Heading>
-						<Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
+						{/* <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
 							Estos son los datos de la cuenta
-						</Text>
+						</Text> */}
 					</Stack>
 					<Box mt={10} ref={refForm}>
 						<Stack spacing={4}>
